@@ -1,0 +1,113 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@{
+    ViewBag.Title = "Животноводство";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="breeding">
+    <h4 class="georgia-handler">Сервис Животноводство.</h4>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <span class="breeding-section">Верблюдоводство</span><br />
+            <a class="breeding-href" href="~/Breeding/CamelComing">Верблюдоводство</a><br />
+            <span class="breeding-section">Козоводство</span><br />
+            <a class="breeding-href" href="~/Breeding/GoatComing">Козоводство</a><br />
+            <span class="breeding-section">Коневодство</span><br />
+            <a class="breeding-href" href="~/Breeding/HorseComing">Лошади</a><br />
+            <a class="breeding-href" href="~/Breeding/PonyComing">Пони</a><br />
+            <span class="breeding-section">Кролиководство</span><br />
+            <a class="breeding-href" href="~/Breeding/RabbitSkinComing">Шкурковые породы/Мясо-шкурковые породы</a><br />
+            <a class="breeding-href" href="~/Breeding/RabbitMeatComing">Мясные породы/Пуховые породы</a><br />
+            <span class="breeding-section">Овцеводство</span><br />
+            <a class="breeding-href" href="~/Breeding/SheepComing">Овцеводство</a><br />
+            <span class="breeding-section">Птицеводство</span><br />
+            <span class="breeding-birdsection">Куры</span><br />
+            <a class="breeding-href" href="~/Breeding/HenMeatComing">Мясные породы/Мясояичные породы</a><br />
+            <a class="breeding-href" href="~/Breeding/HenEggComing">Яичные/Декоративные/Бойцовые породы</a><br />
+            <div class="div-bird">
+                <a class="breeding-birdhref" href="~/Breeding/GooseComing">Гуси &nbsp; Утки &nbsp; Индюки &nbsp; Цесарки</a>
+                <a class="breeding-birdhref" href="~/Breeding/QuailComing">Перепела &nbsp; Фазаны &nbsp; Страусы</a>
+            </div><br />
+            <img class="breeding-photo1" src="~/Images/Bee.jpg" alt="Идет загрузка фото" />
+            <img id="breeding" class="breeding-photo1" alt="&nbsp;&nbsp;Загрузите фото в личном кабинете" />
+            <p class="growing-p1">
+                Многие ошибочно полагают, что работа на пасеке чрезвычайно выматывает. На самом деле, вовлекаясь в интересный процесс,
+                человек не замечает течения времени и огромных объемов выполненных работ, а все потому что работа с пчелами на свежем
+                воздухе всегда занимательна и продуктивна. Конечно, случаются и авралы на пасеке во время высадки пчел из зимовника или
+                при перевозке пчел на кочёвку. Но для истинного любителя пчел любая деятельность, связанная с
+                <a href="http://uroki-online.com/house/pchelovodstvo/">пчеловодством</a>,
+                будет в радость, а результатом тщательного ухода за пасекой, как правило, становится богатый урожай меда.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <span class="breeding-section">Пчеловодство</span><br />
+            <a class="breeding-href" href="~/Breeding/BeeComing">Пчeловодство</a><br />
+            <span class="breeding-section">Рыбоводство</span><br />
+            <a class="breeding-href" href="~/Breeding/TeplovyeFishComing">Теплолюбивые рыбы</a><br />
+            <a class="breeding-href" href="~/Breeding/СoldwaterFishComing">Холоднолюбивые рыбы</a><br />
+            <span class="breeding-section">Свиноводство</span><br />
+            <a class="breeding-href" href="~/Breeding/SwineComing">Свиноводство</a><br />
+            <span class="breeding-section">Скотоводство</span><br />
+            <a class="breeding-href" href="~/Breeding/CattlemeatComing">Мясные породы</a><br />
+            <a class="breeding-href" href="~/Breeding/CattlemilkComing">Молочные породы</a><br />
+            <a class="breeding-href" href="~/Breeding/CattlemixedComing">Мясо-молочные породы</a><br />
+            <span class="breeding-section">Собаководство</span><br />
+            <div class="row between-doglinks">
+                <div class="col-md-2 div-width"></div>
+                <div class="col-md-8">
+                    <a class="breeding-pinscherdog" href="~/Breeding/PinscherdogComing">Пастушьи/Cкотогонные/Пинчеры/ Шнауцеры/Mолоссы/Горные/Терьеры</a><br />
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="between-doglinks">
+                <a class="breeding-href" href="~/Breeding/HoundsdogComing">Таксы/Шпицы/Примитивные/Гончие/Родственные</a>
+            </div>
+            <div class="between-doglinks">
+                <a class="breeding-href" href="~/Breeding/СopsdogComing">Легавые/Ретриверы/Спаниели/Водяные</a>
+            </div>
+            <div>
+                <a class="breeding-href" href="~/Breeding/BorzoidogComing">Декоративные/Борзые/Прочие породы</a>
+            </div>
+            <img class="breeding-photo2" src="~/Images/Cow.jpg" alt="Идет загрузка фото" />
+            <img class="breeding-photo2" src="~/Images/Horse.jpg" alt="Идет загрузка фото" />
+            <p class="growing-p1">
+                Прежде чем начинать начинать занимать мясным скотоводством, Вы должны убедиться, что крепко стоите
+                именно на пастбищной земле. Если в том регионе, где таких земель (пахотных и пастбищных) примерно поровну
+                (или пахотные преобладают), то заниматься скотоводством невыгодно и неразумно.Теория и практика мясного
+                скотоводства подсказывают: для того, чтобы разводить бурёнок на мясо с выгодой для себя, вокруг должны
+                быть хорошие пастбищные земли, которые называются естественными кормовми угодьями. Если же Вы, лишённые
+                пастбищ, будете вкладываться в искусственный или привозной корм, то ваши бурёнки будут золотыми,
+                они “съедят” все ваши деньги, вместо того, чтобы приносить прибыль.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="breeding-photo3" src="~/Images/Duck.jpg" alt="Идет загрузка фото" />
+        </div>
+        <div class="col-md-6">
+            <img class="breeding-photo3" src="~/Images/Dog.jpg" alt="Идет загрузка фото" />
+        </div>
+    </div>
+    <p class="growing-p2">
+        Куры всех пород успешно разводятся практически повсеместно независимо от природно-климатических условий и размера
+        приусадебного участка. Если рядом с хозяйством есть залуженные земли, то целесообразней заняться разведением гусей.
+        Молодняк этого вида требует ухода (кормления) только до 30-дневного возраста, а в дальнейшем содержится на зеленых
+        вьщасах самостоятельно. При наличии поблизости водоема следует разводить уток. Индеек и цесарок хорошо содержать
+        в местах, где имеются заросли кустарников, мелколесье, овраги, пустыри и другие свободные выгулы.
+        Для содержания домашней птицы всех видов можно приспособить имеющееся помещение или построить специальное,
+        самой простой конструкции. Прежде чем приступить к строительству
+        <a href="http://dachnaya-zhizn.ru/kak-postroit-ptichnik-svoimi-rukami">птичника</a>,
+        важно правильно выбрать для него место, лучше на возвышенности. Располагать птичник надо с подветренной от жилого
+        дома стороны. Желательно, чтобы окна и дверь птичника смотрели на юг, а глухая стена встречала направление дующих ветров.
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+    success(function (data) {
+        $("#breeding").attr('src', '/StoreImages/StoreImages/' + data[2]);
+    });
+    });
+</script>

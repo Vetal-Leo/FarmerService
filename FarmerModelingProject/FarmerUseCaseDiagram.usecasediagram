@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="41149f7a-9d99-4eb0-9757-4837784890bb" name="FarmerUseCaseDiagram" linkedPackageId="5e090852-f085-40c0-8623-4e083dff478f" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="953fb8f5-568a-4ed7-9f9a-4b4aafbe960e">
+      <profileInstance Id="89ea0215-15ac-4902-a776-ad6c0d517adc" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1593aa5b-5032-4d4c-b4c4-8bc03fc21509">
+      <profileInstance Id="01f83a12-7ee3-4f98-8289-35563555f373" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="f97aa566-1bc7-4910-b02b-2184a6e9831e" name="Незарегистрированный пользователь" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4ea0bf03-6484-4d01-9ba3-cedb433f837d" />
+        <generalsInternal>
+          <generalization Id="658b2ba2-552a-47ce-98a6-134dcfa29792" isSubstitutable="false">
+            <actorMoniker Id="c7367a45-ba2c-4605-bed5-00dbd224c718" LastKnownName="Зарегистрированный пользователь" />
+            <elementDefinition Id="1e3e37bf-1e8d-4aca-8dda-c329c888f1d9" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e2861fd0-52f0-4692-926b-6d99070d8f99" isDerived="false" sourceEndRoleName="Незарегистрированный пользователь" targetEndRoleName="Зарегистрироваться" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d426c0d2-8963-400d-b2ea-aba68aef5e23" LastKnownName="Зарегистрироваться" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c7512ec-05c0-4aaf-96a5-97425392bd6b" name="Незарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="de3b46b3-9c87-4b42-81aa-51d9e66e5a0d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="831ab5fa-7122-42e5-b599-3fea8e5add65" name="Зарегистрироваться" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4528cb2f-6984-4d38-b38d-326de755daeb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d9fc8859-e670-4ecc-b348-81702fa05995" />
+          </association>
+          <association Id="13fc65e9-6327-4bcf-8f4e-5dd586abc719" isDerived="false" sourceEndRoleName="Незарегистрированный пользователь" targetEndRoleName="Просматривать главную страницу" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6fc9d6e0-d72e-4a06-8f58-bd7450800b5d" LastKnownName="Просматривать главную страницу" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="283cf513-9c58-476f-a4a3-ad39a85d3767" name="Незарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43848a7a-c822-4755-80cd-f554cb880f4c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c28228f7-dde4-4575-bec3-1078af7d79e4" name="Просматривать главную страницу" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c2496561-34d3-489f-ac38-4acbdd4e752a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86728a45-1b08-48ec-8502-5312155a9a94" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d426c0d2-8963-400d-b2ea-aba68aef5e23" name="Зарегистрироваться" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3852e85a-cb28-44c1-86ed-425862dca5a8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6fc9d6e0-d72e-4a06-8f58-bd7450800b5d" name="Просматривать главную страницу" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="542bdcfd-4ea9-412d-b7e4-9b3d380be9c1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="c7367a45-ba2c-4605-bed5-00dbd224c718" name="Зарегистрированный пользователь" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7890b35f-879d-4a02-920a-7c15fc2edd49" />
+        <generalsInternal>
+          <generalization Id="afc9c898-1781-4140-8763-bd925a6b33c6" isSubstitutable="false">
+            <actorMoniker Id="daf830b2-317d-4f4f-b5e7-e40713f2d5c8" LastKnownName="Администратор" />
+            <elementDefinition Id="e0d34ac8-ab43-465f-9727-92a972e2e6a0" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="b12ab349-fb15-485a-a6a6-b1f7a3061268" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Войти в свой аккаунт" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d9e0de31-bdc8-45c0-981b-84dba3c4cdb4" LastKnownName="Войти в свой аккаунт" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52679562-3e3c-4603-8cb9-b1c1c8ca5b22" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4be80b99-c0ae-4d74-8d29-3ec2e0bc3111" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="09c45e59-3087-4163-b2f2-9df1f8b02e98" name="Войти в свой аккаунт" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6df3155a-b678-4fb6-ae5e-7a1f531204a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ae0a5ef5-5db2-44ff-8cbd-401c48212ac1" />
+          </association>
+          <association Id="564f9bfd-dcf2-4f84-aaab-3c5f382dd5b8" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Войти в личный кабинет, заполнить  и отредактировать данные о себе" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ed35c631-470e-45e9-8fc5-91d09aeb8c53" LastKnownName="Войти в Личный кабинет, заполнить  и отредактировать данные о себе" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a0f4c692-8537-43df-bda9-1095a1d7d241" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="241aca52-2a4c-45b3-8d4a-a5095132efa1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d3a9893b-af08-468a-837d-40a1b18353d2" name="Войти в личный кабинет, заполнить  и отредактировать данные о себе" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a712a690-cb1a-48db-87dc-bc67ae2ad872" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="765416f4-570c-4717-bc6b-06d2a66d413e" />
+          </association>
+          <association Id="51ca0957-01c6-4192-8f22-b7c91c3b924b" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Загружать и редактировать  фото , загружать PDF документы " isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1ba93a7a-88f9-4631-9e7b-8eaca1fb767f" LastKnownName="Загружать и редактировать  фото , загружать PDF документы " />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a3bb8249-71b3-4715-b7ce-5f1a75ab8115" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="48b3b1e2-9895-4365-8809-9a4b198d2211" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ad75fb6-c275-4c9b-b3f1-07860563a466" name="Загружать и редактировать  фото , загружать PDF документы " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a1c47741-bb95-4dd2-9ad4-9c6f17ea19b6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c638355b-fa5e-4b37-beb3-71a9b6b0cb70" />
+          </association>
+          <association Id="34000efb-889d-4f3b-80e2-5ba644ae5e9e" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Просматривать любую страницу сайта" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c168283-551b-4a5a-8406-4276f0a94685" LastKnownName="Просматривать любую страницу сайта" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a423f6b7-24dc-4c97-a8c1-e44071369fe1" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="23c43b00-0daa-4b05-9ce0-5b4847d2878f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b655f88-8fcc-403d-9a8d-ef8efb60b8e4" name="Просматривать любую страницу сайта" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1a18b28a-b75e-4f8b-9657-dfc8a8bb540e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a9fb82a5-d15d-4d2f-95cc-9e33949aaff6" />
+          </association>
+          <association Id="5d788132-875a-4b5e-b684-7eb03630a281" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Добавлять,редактировать и удалять данные в любых разделах сайта" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c4ccf8a5-5148-4dcb-b034-669d319ede8f" LastKnownName="Добавлять,редактировать и удалять данные в разделе Растениеводство" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="12f4d78a-d8c5-4c32-9f18-ef3e69d78cf7" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4b2ee4d9-3266-40f7-85f0-e4447e91910f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f1025bb8-1bc7-44b7-a6d2-01cbdfb2c5d7" name="Добавлять,редактировать и удалять данные в любых разделах сайта" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ccb1c683-b5e2-4e8d-9afa-04d0b02e586a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="54fd5fbd-1132-42a2-b6f2-909e26f8a236" />
+          </association>
+          <association Id="1909ebc4-0c3b-4360-b248-dae94060e446" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Получать сообщения от системы" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b14e9216-46a2-42b9-9e5f-037623c06398" LastKnownName="Получать сообщения от системы" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a83e648f-8e79-40a1-808d-a999107e97d7" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6700def6-65d1-44e6-828f-d47ea4ddf3d5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24537b96-55fb-48a0-a07d-763a708c771c" name="Получать сообщения от системы" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="91e90705-c17a-4da1-bb0f-9678c7163b66" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f3a20cb9-b8f1-444c-b650-c39d49a53d3d" />
+          </association>
+          <association Id="de4df609-6692-4416-bec1-82b81c443d5a" isDerived="false" sourceEndRoleName="Зарегистрированный пользователь" targetEndRoleName="Добавлять,редактировать и удалять данные в разделе Животноводство" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="66a9f68d-1ef7-42e4-8096-b924c3b9d4d9" LastKnownName="Добавлять,редактировать и удалять данные в разделе Животноводство" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="466bdcc7-8c26-4818-8b29-f303a0bfe422" name="Зарегистрированный пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2b1ad2eb-bfee-4ddb-8b16-e250a819e052" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f0a5dd2-6778-4217-92cd-e6682fa57168" name="Добавлять,редактировать и удалять данные в разделе Животноводство" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4e12a61e-b156-4775-b122-2f39679a29c1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b49556b2-06e4-43d9-929b-7ca8f8eb3995" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d9e0de31-bdc8-45c0-981b-84dba3c4cdb4" name="Войти в свой аккаунт" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a91406e0-19e5-4e4a-b2c4-10963e073c5c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ed35c631-470e-45e9-8fc5-91d09aeb8c53" name="Войти в Личный кабинет, заполнить  и отредактировать данные о себе" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eba9a2be-64f7-4503-9284-148153dc5ea1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1ba93a7a-88f9-4631-9e7b-8eaca1fb767f" name="Загружать и редактировать  фото , загружать PDF документы " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="590528d4-e218-443b-a19f-f36ba1f73feb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="daf830b2-317d-4f4f-b5e7-e40713f2d5c8" name="Администратор" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8455d5be-6f20-4394-a33a-7365b868da77" />
+        <targetEnds>
+          <association Id="e560023a-76d9-4966-91b9-97a9fcabb5e2" isDerived="false" sourceEndRoleName="Администратор" targetEndRoleName="Забанить любого пользователя" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cb224541-e945-4b3f-99c4-aac2048fb563" LastKnownName="Забанить любого пользователя" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1ae3547d-e3d2-4008-ab00-e2d9db27d2b9" name="Администратор" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fe9f11d6-3a30-4c7d-b70f-264438a9ff16" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49bacb2e-45ff-4e51-a81c-3c6ec9bcc7e0" name="Забанить любого пользователя" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8493dc50-7c7d-4d7d-9379-d6bb5ecce79a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5eae5e85-7401-4101-a0a5-c5ee026ab825" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cb224541-e945-4b3f-99c4-aac2048fb563" name="Забанить любого пользователя" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="753289e4-2145-43d7-99de-cb38f247f08f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c168283-551b-4a5a-8406-4276f0a94685" name="Просматривать любую страницу сайта" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bbdfb4fb-8a7f-4857-88d0-dff1bdec4bc6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c4ccf8a5-5148-4dcb-b034-669d319ede8f" name="Добавлять,редактировать и удалять данные в разделе Растениеводство" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f3c78748-7bb7-4a31-9a14-eab0d0eec048" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b14e9216-46a2-42b9-9e5f-037623c06398" name="Получать сообщения от системы" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a6061f1f-ccae-47e3-8ed7-115ae9be279b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="66a9f68d-1ef7-42e4-8096-b924c3b9d4d9" name="Добавлять,редактировать и удалять данные в разделе Животноводство" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1fac8b83-1d28-4425-96e4-a2b84eb3cd94" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="5e090852-f085-40c0-8623-4e083dff478f" name="FarmerModelingProject">
+    <elementDefinition Id="6fd740da-782b-42e3-bd2e-7a9e98967a10" />
+  </package>
+</useCaseModelRoot>

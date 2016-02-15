@@ -1,0 +1,60 @@
+﻿@using System
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Images/Farmer.ico" type="image/x-icon">
+    <title>@ViewBag.Title - Farmer</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="fixedtop">
+            <img src="~/Images/Farmer.png" alt="Идет загрузка изображения..." />
+            @* ReSharper disable once Mvc.PartialViewNotResolved *@
+            @Html.Partial("_LoginPartial")
+        </div>
+        <div class="navbar navbarstyle">
+            <div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Главная", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Растениеводство", "Index", "Growing", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Животноводство", "Index", "Breeding", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Закупки", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Техника", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Топлево", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Удобрения", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Земельные ресурсы", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Чат", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("Торговая площадка", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                        <li>@Html.ActionLink("О нас", "Index", "Home", null, new { @class = "navbarcolor" })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; Farmer - @DateTime.Now.Year г.</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

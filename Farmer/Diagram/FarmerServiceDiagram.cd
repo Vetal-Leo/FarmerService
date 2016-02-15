@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Farmer.BundleConfig">
+    <Position X="17.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.FilterConfig">
+    <Position X="14.75" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.ApplicationUserManager">
+    <Position X="19" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.RouteConfig">
+    <Position X="12.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Startup">
+    <Position X="16" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAEAgIAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.WebApiConfig">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.WebApiApplication">
+    <Position X="22.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ApiDescriptionExtensions">
+    <Position X="16.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ApiDescriptionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.HelpPageConfig">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\App_Start\HelpPageConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.HelpPageAreaRegistration">
+    <Position X="17.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\HelpPageAreaRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.HelpPageConfigurationExtensions">
+    <Position X="4" Y="18.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAABAICACACEAACGSCAAAADABAAAEMAAAAAIEA=</HashCode>
+      <FileName>Areas\HelpPage\HelpPageConfigurationExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.HelpPageSampleGenerator">
+    <Position X="0.5" Y="18.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYAARQAQAAEAJgAAAQAAgAAEAgFAAAAABCAAAI=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.HelpPageSampleKey">
+    <Position X="12" Y="21.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAABAAAgAgAAAAAAAAAAAAICQAAAEAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ImageSample">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAIAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\ImageSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.InvalidSample">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\InvalidSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ObjectGenerator">
+    <Position X="12.25" Y="13" Width="2.5" />
+    <NestedTypes>
+      <Class Name="Farmer.Areas.HelpPage.ObjectGenerator.SimpleTypeObjectGenerator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Areas\HelpPage\SampleGeneration\ObjectGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABDAoAAAAAACAEAICAAAYAAACAAAAAAgCAgAAAAIA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\ObjectGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.TextSample">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAACAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\TextSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.XmlDocumentationProvider" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="13" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QIEAAAAIBAEAQAAABIAAAAAAAAAAAAAAAAAAAAAAAkg=</HashCode>
+      <FileName>Areas\HelpPage\XmlDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.Controllers.HelpController">
+    <Position X="12.25" Y="18" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAAAAAAAAAAAAAAAAAAAAAgAEAAAAgAAA=</HashCode>
+      <FileName>Areas\HelpPage\Controllers\HelpController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.CollectionModelDescription">
+    <Position X="6.5" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ComplexTypeModelDescription">
+    <Position X="3.5" Y="11" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.DictionaryModelDescription">
+    <Position X="6.75" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.EnumTypeModelDescription">
+    <Position X="9.25" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.EnumValueDescription">
+    <Position X="16.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.KeyValuePairModelDescription">
+    <Position X="0.5" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ModelDescription">
+    <Position X="4" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+    <Position X="4" Y="13" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAGQBAAJAABAAACBAgAAAAASBAAAAAAAAAEAACAQAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+    <Position X="14.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ModelNameHelper">
+    <Position X="12.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ParameterAnnotation">
+    <Position X="16.25" Y="15.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.ParameterDescription">
+    <Position X="19" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAQAQAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ParameterDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.ModelDescriptions.SimpleTypeModelDescription">
+    <Position X="0.5" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Areas.HelpPage.Models.HelpPageApiModel">
+    <Position X="8.5" Y="20.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAGBAAAAAAAAAAAAAgAAAAAAAUBAAAAAQAQAg=</HashCode>
+      <FileName>Areas\HelpPage\Models\HelpPageApiModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.AccountController">
+    <Position X="6.25" Y="0.5" Width="2.5" />
+    <NestedTypes>
+      <Class Name="Farmer.Controllers.AccountController.ExternalLoginData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Farmer.Controllers.AccountController.RandomOAuthStateGenerator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAAEAAAAAAAgQCAEAARAwIAABABEBAAAAAAgAAAAQA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.AccountSimpleController">
+    <Position X="16.25" Y="17" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABAAAAAAAAAAAAAABAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.EmailService">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.FarmerAuthorize">
+    <Position X="20" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.BaseApiController">
+    <Position X="0.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\BaseApiController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.HomeController">
+    <Position X="12.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.ValuesController">
+    <Position X="22.25" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Controllers\ValuesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.Breeding.BreedingApiController">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QJgVAICAgSAQBEBGQAAAAAAFAAAAAAACAAAIAAAIAQI=</HashCode>
+      <FileName>Controllers\Breeding\BreedingApiController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.Breeding.BreedingController">
+    <Position X="21.75" Y="20" Width="3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>fP338d9nv/dXZv1/zy/X993f2133l9+X7f/z0/bz//8=</HashCode>
+      <FileName>Controllers\Breeding\BreedingBeeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.Growing.GrowingController">
+    <Position X="16" Y="20" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>WSOQ5+glCbyuVBGcTSVEJ46iGk6mE7aCTI3BGDuqx68=</HashCode>
+      <FileName>Controllers\Growing\FileClearController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.Growing.GrowingApiController">
+    <Position X="0.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAECSIIBhEAAAAAAAAAAASAAAAIAAAQIADAIAA=</HashCode>
+      <FileName>Controllers\Growing\GrowingApiController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.Growing.PlantingDatesApiController">
+    <Position X="6.25" Y="6" Width="2.5" />
+    <NestedTypes>
+      <Enum Name="Farmer.Controllers.Growing.PlantingDatesApiController.ResultType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Growing\PlantingDatesApiController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Farmer.Controllers.Growing.PlantingDatesApiController.Mn" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Growing\PlantingDatesApiController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="Farmer.Controllers.Growing.PlantingDatesApiController.Result" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\Growing\PlantingDatesApiController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Growing\PlantingDatesApiController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.HomeUser.UserController">
+    <Position X="9.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABCAAQCEABAAgAAAAAYAAQAAACQMAEAAQABACAAA=</HashCode>
+      <FileName>Controllers\HomeUser\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Controllers.HomeUser.UserSimpleController">
+    <Position X="0.5" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAhAQAAAAAAQAACAAAAAEAAAEAABACAAA=</HashCode>
+      <FileName>Controllers\HomeUser\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.AddExternalLoginBindingModel">
+    <Position X="12" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.ChangePasswordBindingModel">
+    <Position X="19" Y="13" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.RegisterBindingModel">
+    <Position X="22.5" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.RegisterExternalBindingModel">
+    <Position X="17.25" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.RemoveLoginBindingModel">
+    <Position X="12.25" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.SetPasswordBindingModel">
+    <Position X="19.25" Y="15.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.ExternalLoginViewModel">
+    <Position X="21.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAABAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.ManageInfoViewModel">
+    <Position X="22.5" Y="15.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.UserInfoViewModel">
+    <Position X="19.75" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Models.UserLoginInfoViewModel">
+    <Position X="12.25" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Providers.ApplicationOAuthProvider">
+    <Position X="8.25" Y="17.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAACAAAAAAAAAAAAAEAAEIAAAAAAAAAAAgA=</HashCode>
+      <FileName>Providers\ApplicationOAuthProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Farmer.Results.ChallengeResult" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="17.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Results\ChallengeResult.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Farmer.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider">
+    <Position X="9.25" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Farmer.Areas.HelpPage.SampleDirection">
+    <Position X="22.5" Y="18" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\SampleDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

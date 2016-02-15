@@ -1,0 +1,21 @@
+﻿@model Domain.Entities.Breeding.FishComings
+
+@{
+    ViewBag.Title = "Рыбоводство(Теплолюбивые рыбы) - Удаление рыб.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-bee">Рыбоводство(Теплолюбивые рыбы). Приход.</h3>
+<h3>Вы уверены, что хотите это удалить  &nbsp; @Model.Name , &nbsp; @Model.Amount @Model.MassType ?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+        <br />
+        @Html.ActionLink("Назад в Рыбоводство(Теплолюбивые рыбы). Приход", "TeplovyeFishComing")
+    }
+
+</div>

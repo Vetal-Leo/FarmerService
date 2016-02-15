@@ -1,0 +1,7 @@
+﻿
+
+Enable-Migrations -EnableAutomaticMigration
+Add-Migration CreatingIdentityMigration
+Add-Migration ExtendProfileMigration
+
+Update-Database –Verbose

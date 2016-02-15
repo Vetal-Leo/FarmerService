@@ -1,0 +1,691 @@
+﻿@Scripts.Render("~/bundles/jquery");
+@{
+    ViewBag.Title = "Личный кабинет";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="space">Личный кабинет.</h3>
+<div ng-app="cabinetapp" ng-controller="cabinetController">
+    <div class="row">
+        <div class="col-md-3">
+            <img id="avatar" ng-src="~/StoreImages/StoreImages/{{User.avatar}}" alt="Идет загрузка фото" width="300" height="300" />
+            <br /><br />
+            <label for="avatarInput">Аватар</label>
+            <input id="avatarInput" type="file" name="avatarInput" accept="image/*" />
+            <br />
+            <p id="btnAvatar" class="btn btn-success btn-sm">Загрузить</p>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Email:</p>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group col-md-3 ">
+                        <label id="label-login" class="cabinet-label">{{User.login}}</label>
+                        <input id="logincontrol" class="form-control form-group cabinet-input" value="{{User.login}}" />
+                    </div>
+                    <div class="form-group">
+                        <p id="login" class="btn btn-primary btn-sm cabinet">Изменить</p>
+                    </div>
+                    <div class="form-group">
+                        <input id="password" class="form-control form-group cabinet-latent" type="password" placeholder="Введите пароль" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Пароль:</p>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-3 cabinet form-group">
+                        <input id="newpassword" class="form-control" readonly="readonly" value="***" type="password" />
+                    </div>
+                    <div class="col-md-3 cabinet form-group">
+                        <p id="changepassword" class="btn btn-primary btn-sm cabinet-btn">Изменить</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Имя:</p>
+                </div>
+                <div class="col-md-3 cabinet">
+                    <input id="name" class="form-control" value="{{User.name}}" />
+                </div>
+                <label id="empty-error" class="text-danger cabinet"></label>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Фамилия:</p>
+                </div>
+                <div class="col-md-3 cabinet">
+                    <input id="lastname" class="form-control" value="{{User.lastname}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Отчество:</p>
+                </div>
+                <div class="col-md-3 cabinet">
+                    <input id="patronymic" class="form-control" value="{{User.patronymic}}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>День рождения:</p>
+                </div>
+                <div class="col-md-3 cabinet">
+                    <div class="form-group">
+                        <div class="input-group date" id="datetimepicker2">
+                            <input id="birthday" type="text" class="form-control" value="{{User.birthday}}" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 cabinethead">
+                    <p>Телефон:</p>
+                </div>
+                <div class="col-md-3 cabinet">
+                    <input id="phone" class="form-control" placeholder="+380...,+7..." value="{{User.phone}}" />
+                </div>
+                <label id="phone-error" class="text-danger cabinet"></label>
+            </div>
+            <br />
+            <p id="save" class="btn btn-primary btn-xs inlet-left" data-toggle="tooltip" data-placement="right" title="Изменения сохранены">Сохранить</p>
+        </div>
+    </div>
+
+    <br />
+    <h4 class="centre" style="color: #800000">Загрузите ещё свои фотографии</h4>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <img id="growing" ng-src="~/StoreImages/StoreImages/{{User.growing}}" alt="Идет загрузка фото" width="230" height="170" />
+            <br /><br />
+            <label for="growingInput">Растениеводство</label>
+            <input id="growingInput" type="file" name="growingInput" accept="image/*" />
+            <br />
+            <p id="btnGrowing" class="btn btn-success btn-xs">Загрузить</p>
+        </div>
+        <div class="col-md-3">
+            <img id="breeding" ng-src="~/StoreImages/StoreImages/{{User.breeding}}" alt="Идет загрузка фото" width="230" height="170" />
+            <br /><br />
+            <label for="breedingInput">Животноводство</label>
+            <input id="breedingInput" type="file" name="breedingInput" accept="image/*" />
+            <br />
+            <p id="btnBreeding" class="btn btn-success btn-xs">Загрузить</p>
+        </div>
+        <div class="col-md-3">
+            <img id="technic" ng-src="~/StoreImages/StoreImages/{{User.technic}}" alt="Идет загрузка фото" width="230" height="170" />
+            <br /><br />
+            <label for="technicInput">Моя техника</label>
+            <input id="technicInput" type="file" name="technicInput" accept="image/*" />
+            <br />
+            <p id="btnTechnic" class="btn btn-success btn-xs">Загрузить</p>
+        </div>
+        <div class="col-md-3">
+            <img id="product" ng-src="~/StoreImages/StoreImages/{{User.product}}" alt="Идет загрузка фото" width="230" height="170" />
+            <br /><br />
+            <label for="productInput">Моя продукция</label>
+            <input id="productInput" type="file" name="productInput" accept="image/*" />
+            <br />
+            <p id="btnProduct" class="btn btn-success btn-xs">Загрузить</p>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="windowModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">x</button>
+                    <h3 class="modal-title text-danger" id="modalLabel">Внимание! Подтверждение изменения логина.</h3>
+                </div>
+                <div class="modal-body">
+                    <h5>
+                        На электронный адрес <b id="modallogin"></b> в течение нескольких минут будет выслано письмо с инструкцией,
+                        которая поможет вам изменить адрес электронной почты.
+                    </h5>
+                    <h5 class="text-danger">
+                        Внимание!<br />Если у вас нет доступа к электронной почте <b id="modallogin1"></b> то вы потеряете доступ
+                        к вашему аккаунту. Сохранить изменения?
+                    </h5>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Нет</button>
+                    <button class="btn btn-default" type="button" data-dismiss="modal" id="yes">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade " id="errorpassword" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4 class="modal-title text-danger">Неверно указан ваш пароль!</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-dismiss="modal">Ок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="photo-modal fade" id="editPhotoModal" tabindex="-1" role="dialog">
+    <div class="photo-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="photo" alt="Идет загрузка фото" /><br /><br />
+            </div>
+            <div class="modal-footer">
+                <p id="btncutting" class="btn btn-success btn-sm">Выполнить обрезку</p>
+                <p id="btnsave" class="btn btn-primary btn-sm" data-dismiss="modal">Загрузить на сервер</p>
+                <p id="btncancel" class="btn btn-default btn-sm" data-dismiss="modal">Отмена</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //Loading data to the page.
+    var app = angular.module("cabinetapp", []);
+    app.controller("cabinetController", function ($scope, $http) {
+        $http({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+            success(function (data) {
+                console.log(data);
+                $scope.User = {
+                    avatar: data[0],
+                    growing: data[1],
+                    breeding: data[2],
+                    technic: data[3],
+                    product: data[4],
+                    login: data[5],
+                    name: data[6],
+                    lastname: data[7],
+                    patronymic: data[8],
+                    birthday: data[9],
+                    phone: data[10]
+                };
+            });
+    });
+
+
+    $(function () {
+        //Install the widget for the locale using the language parameter and the values of RU
+        $('#datetimepicker2').datetimepicker(
+            { pickTime: false, language: 'ru' }
+        );
+    });
+
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+
+        //Save the changed user data.
+        var options;
+
+        $('#save').click(function () {
+            //Save changes Name.
+            var phone = $('#phone').val().replace("+", "ϙ");
+            $.ajax({
+                method: "POST",
+                url: "/api/User/SaveName?id=1&name=" + $('#name').val() + "&lastname=" + $('#lastname').val() +
+                    "&patronymic=" + $('#patronymic').val() + "&birthday=" + $('#birthday').val() + "&phone=" + phone
+            }).success(function (data) {
+                if (data === 1) {
+                    $('#save').tooltip("destroy");
+                    $('#empty-error').text("• Не все поля заполнены");
+                    return;
+                }
+                if (data === 2) {
+                    $('#save').tooltip("destroy");
+                    $('#phone-error').text("• Неккоректный формат ввода телефона");
+                    return;
+                }
+                $('#save').mouseout(function () { $('#save').tooltip("destroy"); });
+            });
+
+
+            //Save changes Login.
+            if ($('#logincontrol').val() !== $('#label-login').text()) {
+                $('#windowModal').modal(options);
+                var newlogin = $('#logincontrol').val();
+                $('#modallogin').text(newlogin);
+                $('#modallogin1').text(newlogin);
+                return;
+            }
+
+            $('#save').tooltip("show");
+            $('#empty-error').text("");
+        });
+
+
+        $('#yes').click(function () {
+            $.ajax({ method: "POST", url: "/api/User/ChangeLogin?id=1&password=" + $('#password').val() + "&newlogin=" + $('#logincontrol').val() }).
+                success(function (data) {
+                    if (data === false || $('#password').val() === "") $('#errorpassword').modal(options);
+                    else window.location = "/UserSimple/ChangeLogin";
+                });
+        });
+
+
+        $('#phone').change(function () { $('#phone-error').text("") });
+        $('#save').tooltip("destroy");
+        $('#save').mouseout(function () { $('#save').tooltip("destroy"); });
+        options = {
+            "backdrop": "static"
+        };
+    });
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        //Adjusting the visibility of the input elements on the page.
+
+        $(document).ready(function () {
+            $('#password').hide();
+            $('#logincontrol').hide();
+        });
+
+        $("#login").click(function () {
+            $('#password').show();
+            $('#logincontrol').show();
+            $('#logincontrol').css("margin-top", "25px");
+            $('#label-login').hide();
+        });
+
+        $("#changepassword").click(function () {
+            window.location = "/UserSimple/ChangePassword";
+        });
+    });
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        //PHOTO
+
+
+        var article;
+        var files;
+        var data;
+        var posX = 0, posY = 0, rateW, rateH;
+        var directDownload = true;
+        var options;
+
+
+        // The change of coordinates.
+        function showCoords(c) {
+            posX = c.x;
+            posY = c.y;
+            rateW = c.w;
+            rateH = c.h;
+        }
+        // Destroy Jcrop.
+        function destroyJcrop() {
+            $("#photo").removeAttr('src');
+            var jcropApi = $('#photo').data('Jcrop');
+            if(jcropApi!= undefined) jcropApi.destroy();
+            $('#photo').width('auto');
+            $('#photo').height('auto');
+            directDownload = true;
+        }
+
+
+        // Avatar.
+
+        $("#btnAvatar").click(function (e) {
+            article = 'Avatar';
+            e.preventDefault();
+            files = document.getElementById("avatarInput").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+
+                    }
+                }
+            }
+
+            //Download to a temporary folder.
+            $.ajax({
+                method: "POST",
+                url: "/api/User/AddTempPhoto",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function () {
+                    jQuery('#editPhotoModal').modal(options);
+                    var allpath = $(":file[name=avatarInput]").val();
+                    var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                    var filename = allpath.substring(len).replace("\\", "");
+                    $("#photo").attr('src', '/StoreImages/Temp/' + filename);
+                    //document.getElementById("avatarInput").value);
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        });
+
+
+
+        // Growing.
+        $("#btnGrowing").click(function (e) {
+
+            article = 'Growing';
+            e.preventDefault();
+            files = document.getElementById("growingInput").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+
+                    }
+                }
+            }
+
+            //Download to a temporary folder.
+            $.ajax({
+                method: "POST",
+                url: "/api/User/AddTempPhoto",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function () {
+                    jQuery('#editPhotoModal').modal(options);
+                    var allpath = $(":file[name=growingInput]").val();
+                    var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                    var filename = allpath.substring(len).replace("\\", "");
+                    $("#photo").attr('src', '/StoreImages/Temp/' + filename);
+
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        });
+
+
+
+        // Breeding.
+        $("#btnBreeding").click(function (e) {
+
+            article = 'Breeding';
+            e.preventDefault();
+            files = document.getElementById("breedingInput").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+
+                    }
+                }
+            }
+
+            //Download to a temporary folder.
+            $.ajax({
+                method: "POST",
+                url: "/api/User/AddTempPhoto",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function () {
+                    jQuery('#editPhotoModal').modal(options);
+                    var allpath = $(":file[name=breedingInput]").val();
+                    var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                    var filename = allpath.substring(len).replace("\\", "");
+                    $("#photo").attr('src', '/StoreImages/Temp/' + filename);
+
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        });
+
+
+        // Technic.
+        $("#btnTechnic").click(function (e) {
+           
+            article = 'Technic';
+            e.preventDefault();
+            files = document.getElementById("technicInput").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+
+                    }
+                }
+            }
+
+            //Download to a temporary folder.
+            $.ajax({
+                method: "POST",
+                url: "/api/User/AddTempPhoto",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function () {
+                    jQuery('#editPhotoModal').modal(options);
+                    var allpath = $(":file[name=technicInput]").val();
+                    var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                    var filename = allpath.substring(len).replace("\\", "");
+                    $("#photo").attr('src', '/StoreImages/Temp/' + filename);
+
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        });
+
+        // Product.
+        $("#btnProduct").click(function (e) {
+          
+            article = 'Product';
+            e.preventDefault();
+            files = document.getElementById("productInput").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+
+                    }
+                }
+            }
+
+            //Download to a temporary folder.
+            $.ajax({
+                method: "POST",
+                url: "/api/User/AddTempPhoto",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function () {
+                    jQuery('#editPhotoModal').modal(options);
+                    var allpath = $(":file[name=productInput]").val();
+                    var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                    var filename = allpath.substring(len).replace("\\", "");
+                    $("#photo").attr('src', '/StoreImages/Temp/' + filename);
+
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        });
+
+
+        // Save the cropped image.
+        $('#btnsave').click(function () {
+
+            if (directDownload) {
+                rateW = $("#photo").width();
+                rateH = $("#photo").height();
+                posX = 0;
+                posY = 0;
+            }
+            var userfilename;
+            if (article === "Avatar") {
+                var allpath = $(":file[name=avatarInput]").val();
+                var len = allpath.substring(0, allpath.lastIndexOf('\\')).length;
+                userfilename = allpath.substring(len).replace("\\", "");
+                //document.getElementById("avatarInput").value;
+                $.ajax({
+                    method: "POST",
+                    url: "/api/User/AddPhotoByServer?id=1&article=" + article + "&userfilename=" + userfilename + "&posX=" + posX + "&posY=" + posY + "&rateW=" + rateW + "&rateH=" + rateH,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+                            success(function (rezult) {
+                                $("#avatar").attr('src', '/StoreImages/StoreImages/' + rezult[0]);
+                            });
+                        destroyJcrop();
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                });
+            }
+
+            if (article === "Growing") {
+                userfilename = document.getElementById("growingInput").value;
+                $.ajax({
+                    method: "POST",
+                    url: "/api/User/AddPhotoByServer?id=1&article=" + article + "&userfilename=" + userfilename + "&posX=" + posX + "&posY=" + posY + "&rateW=" + rateW + "&rateH=" + rateH,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+                            success(function (rezult) {
+                                $("#growing").attr('src', '/StoreImages/StoreImages/' + rezult[1]);
+                            });
+                        destroyJcrop();
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                });
+            }
+
+            if (article === "Breeding") {
+                userfilename = document.getElementById("breedingInput").value;
+                $.ajax({
+                    method: "POST",
+                    url: "/api/User/AddPhotoByServer?id=1&article=" + article + "&userfilename=" + userfilename + "&posX=" + posX + "&posY=" + posY + "&rateW=" + rateW + "&rateH=" + rateH,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+                            success(function (rezult) {
+                                $("#breeding").attr('src', '/StoreImages/StoreImages/' + rezult[2]);
+                            });
+                        destroyJcrop();
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                });
+            }
+
+            if (article === "Technic") {
+                userfilename = document.getElementById("technicInput").value;
+                $.ajax({
+                    method: "POST",
+                    url: "/api/User/AddPhotoByServer?id=1&article=" + article + "&userfilename=" + userfilename + "&posX=" + posX + "&posY=" + posY + "&rateW=" + rateW + "&rateH=" + rateH,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+                            success(function (rezult) {
+                                $("#technic").attr('src', '/StoreImages/StoreImages/' + rezult[3]);
+                            });
+                        destroyJcrop();
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                });
+            }
+
+            if (article === "Product") {
+                userfilename = document.getElementById("productInput").value;
+                $.ajax({
+                    method: "POST",
+                    url: "/api/User/AddPhotoByServer?id=1&article=" + article + "&userfilename=" + userfilename + "&posX=" + posX + "&posY=" + posY + "&rateW=" + rateW + "&rateH=" + rateH,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+                            success(function (rezult) {
+                                $("#product").attr('src', '/StoreImages/StoreImages/' + rezult[4]);
+                            });
+                        destroyJcrop();
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                });
+            }
+        });
+
+
+        //Service Jcrop.
+        $("#btncutting").click(function () {
+            var jcropH, jcropW;
+            switch (article) {
+                case "Avatar":
+                    jcropH = 300;
+                    jcropW = 300;
+                    break;
+                default:
+                    jcropH = 230;
+                    jcropW = 170;
+            }
+
+            $('#photo').Jcrop({
+                onChange: showCoords,
+                onSelect: showCoords,
+                minSize: [jcropH, jcropW]
+            });
+
+            directDownload = false;
+        });
+        $("#btncancel").click(function () {
+            destroyJcrop();
+            return;
+        });
+        options = {
+            "backdrop": "static"
+        };
+    });
+</script>

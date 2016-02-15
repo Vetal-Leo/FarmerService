@@ -1,0 +1,72 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@{
+    ViewBag.Title = "Вход";
+}
+
+<h2 class="centre roman">@ViewBag.Title.</h2>
+<div class="form-horizontal">
+    <h5 class="centre">Вход в ваш личный аккаунт.</h5>
+    <hr />
+    <div class="form-group">
+        <label class="col-md-4 control-label">Введите email</label>
+        <div class="col-md-5">
+            <input type="email" id="emailLogin" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label">Введите пароль</label>
+        <div class="col-md-5">
+            <input type="password" id="passwordLogin" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-5">
+            <input type="submit" id="submitLogin" value="Войти" class="btn btn-primary inlet" />
+        </div>
+    </div>
+    <a href="/AccountSimple/Register">Регистрация нового пользователя</a>
+</div><br/>
+<label class="control-label text-danger" id="error"></label><br/>
+<label class="control-label text-danger" id="error1"></label>
+
+
+<script type="text/javascript">
+    $(function () {
+        var tokenKey = "tokenInfo";
+        $('#submitLogin').click(function (e) {
+            $('#error').text("");
+            e.preventDefault();
+            var loginData = {
+                grant_type: 'password',
+                username: $('#emailLogin').val(),
+                password: $('#passwordLogin').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/Token',
+                data: loginData
+            }).success(function (data) {
+                $.ajax({ method: "GET", url: "/api/Account/IsActivated" }).
+                    success(function (result) {
+                        if (result[0] === false) {
+                            $('#error').text("• Ваш аккаунт не активирован.");
+                            return;
+                        }
+                        if (result[1] === true) {
+                            $('#error').text("• Ваш аккаунт заблокирован Администратором сайта.");
+                            $('#error1').text("Обратитесь к Администратору сайта для разблокировки аккаунта.");
+                            return;
+                        }
+                        window.location = "/Home/Index";
+                        // сохраняем в хранилище sessionStorage токен доступа
+                        sessionStorage.setItem(tokenKey, data.access_token);
+                        console.log(data.access_token);
+                    });
+            }).fail(function (test) {
+                // alert(JSON.stringify(test));
+                $('#error').text("• Неверный логин или пароль.");
+            });
+        });
+    })
+</script>

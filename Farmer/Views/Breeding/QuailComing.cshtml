@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Domain.Entities.Breeding.BreedingComings>
+
+@{
+    ViewBag.Title = "Птицеводство(Перепела,Фазаны,Страусы) - Приход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h1 class="academy-camel">Птицеводство(Перепела,Фазаны,Страусы)</h1>
+<br />
+<p class="shift">
+    Приход &#10132; <a href="/Breeding/QuailCharges">Затраты</a> &nbsp; <a href="/Breeding/QuailDailyProfits">Ежедневная прибыль</a> &#10132;
+    <a href="/Breeding/QuailProfits">Уход</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="/Breeding/QuailRemindings">Напоминания</a>
+</p>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="georgia-handlers">
+                <th>
+                    @Html.DisplayNameFor(model => model.ReceiptDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CultureType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MassType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrencyType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalCost)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReceiptDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CultureType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MassType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CurrencyType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Смотреть", null, new { id = item.Id }, new { @class = "btn btn-success btn-xs", href = item.Document, target = "_blank", title = "Предварительно загрузите PDF - файл!" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalCost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "QuailComingEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "QuailComingDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+    <a class="btn btn-primary btn-xs inlet" href="/Breeding/QuailComingCreate">Добавить</a>
+</div>
+
+

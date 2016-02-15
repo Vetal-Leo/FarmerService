@@ -1,0 +1,85 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@{
+    ViewBag.Title = "Регистрация";
+}
+
+<h2 class="centre roman">@ViewBag.Title.</h2>
+<h5 class="centre">Простая регистрация позволит вам воспользоваться всеми сервисами программы.</h5>
+<hr />
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-4 control-label">Введите Email</label>
+        <div class="col-md-5">
+            <input type="email" id="email" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label">Введите Пароль</label>
+        <div class="col-md-5">
+            <input type="password" id="password" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label">Подтвердите пароль</label>
+        <div class="col-md-5">
+            <input type="password" id="confirmpassword" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-5">
+            <input type="submit" id="submit" class="btn btn-primary" value="Зарегистрироваться" />
+        </div>
+    </div>
+</div>
+<label class="control-label text-danger" id="error"></label>
+<div class="modal fade " id="windowsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 class="modal-title text-success">Регистрация пройдена!</h3>
+                <h4>На электронный адрес &nbsp;<b id="login"></b>&nbsp; было выслано письмо для активации вашего аккаунта.</h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var permit = true;
+    $(function () {
+        $('#submit').click(function (e) {
+            if (permit) {
+                permit = false;
+                $('#error').text("");
+                e.preventDefault();
+                var data = {
+                    Email: $('#email').val(),
+                    Password: $('#password').val(),
+                    ConfirmPassword: $('#confirmpassword').val()
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/Account/Register',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(data)
+                }).success(function (rezult) {
+                    $.ajax({ type: 'POST', url: '/api/User/SetEmptyPhotos?id=' + rezult });
+                    $('#windowsModal').modal(options);
+                    $('#login').text($('#email').val());
+                    permit = true;
+                }).fail(function () {
+                    $('#error').text("• Логин уже существует или Ваши пароли не содержат нужные символы, или не совпадают.");
+                    permit = true;
+                });
+            }
+        });
+    });
+    var options = {
+        "backdrop": "static"
+    }
+</script>

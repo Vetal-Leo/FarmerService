@@ -1,0 +1,439 @@
+﻿
+/*General styles:*/
+body {
+    background-color: #F5F5DC;
+}
+
+.form-control {
+    color: #5C0000;
+}
+
+ a.href-color:visited{
+       color: #5C0000;
+}
+  
+ .tr {
+     color: #5C0000;
+     font-size: 16px;
+ } 
+
+.fixedtop {
+    margin-top: 2px;
+    background-image: url(/Images/Cone.jpg);
+}
+
+@font-face {
+    font-family: Cricket;
+    src: url('/fonts/CricketNormal.eot');
+    src: url('/fonts/CricketNormal.eot') format('embedded-opentype'), url('/fonts/CricketNormal.woff2') format('woff2'), url('/fonts/CricketNormal.woff') format('woff'), url('/fonts/CricketNormal.ttf') format('truetype'), url('/fonts/CricketNormal.svg#CricketNormal') format('svg');
+}
+
+@font-face {
+    font-family: Academy;
+    src: url('/fonts/AcademyBoldItalic.eot');
+    src: url('/fonts/AcademyBoldItalic.eot') format('embedded-opentype'), url('/fonts/AcademyBoldItalic.woff2') format('woff2'), url('/fonts/AcademyBoldItalic.woff') format('woff'), url('/fonts/AcademyBoldItalic.ttf') format('truetype'), url('/fonts/AcademyBoldItalic.svg#AcademyBoldItalic') format('svg');
+}
+
+
+.navbarstyle {
+    font-family: Cricket;
+    font-size: 13px;
+    background: #f8e5b4; /*#CFF818*/
+}
+
+.login {
+    margin-top: 18px;
+    font-family: Cricket;
+    font-size: 25px;
+    background: linear-gradient( -45deg, #fefcea, transparent);
+}
+
+.logincolor {
+    color: black;
+}
+
+.navbarcolor {
+    color: #704214; 
+}
+
+.main {
+    width: 780px;
+    height: 470px;
+    padding: 50px;
+    background-image: url("/Images/Main.jpg");
+}
+
+.main-references {
+    color: white;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: Academy;
+}
+
+    .main-references:hover {
+        color: #ACDEFF;
+        text-decoration: underline;
+    }
+
+.centre {
+    text-align: center;
+}
+
+.shift {
+    text-align: center;
+    font-size: 17px;
+}
+
+.roman {
+    font-family: "Times New Roman", Times, serif, bold;
+    font-size: 35px;
+}
+
+.inlet {
+    width: 170px;
+}
+.inputfile {
+    margin-top: 10px;
+}
+
+.inlet-left {
+    margin-left: 3cm;
+    width: 220px;
+}
+
+.tahoma {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #5C0000;
+}
+
+.tahoma-black {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: black;
+}
+
+
+.personal {
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.user-panel {
+    text-decoration: underline;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.reminding {
+    text-decoration: underline;
+    font-size: 16px;
+    color: red;
+    margin-left: 20px;
+    visibility: hidden;
+}
+
+.remind {
+    font-size: 12px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: gray;
+}
+
+
+.cabinethead {
+    font-size: 17px;
+    margin-top: 25px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.space {
+    margin-top: -20px;
+}
+
+.cabinet {
+    margin-top: 25px;
+}
+
+.cabinet-label {
+    margin-top: 25px;
+    margin-bottom: -30px;
+    font-size: 17px;
+}
+
+.cabinet-input {
+    margin-top: -35px;
+}
+
+.cabinet-latent {
+    margin-top: 25px;
+    margin-left: 12px;
+}
+
+.cabinet-btn {
+    margin-bottom: -8px;
+    margin-left: -14px;
+}
+
+.cabinet-confirm {
+    margin-top: -35px;
+    margin-left: -14px;
+}
+
+.tooltip.right .tooltip-inner {
+    background-color: white;
+    border-right-color: black;
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: black;
+}
+
+.photo-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+
+@media screen and (min-width: 768px) {
+  .photo-modal-dialog {
+    position: absolute;
+    left: 30%;
+    right: auto;
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+/*Growing styles :*/
+.growing {
+    margin-top: -15px;
+    margin-left: 0;
+    width: 1140px;
+    height: 960px;
+    padding: 0.2px;
+    background-image: url("/Images/Growing.jpg");
+}
+
+.georgia {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: black;
+}
+
+.admin {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    line-height: 1cm;
+    color: red;
+}
+.georgia-handler {
+    font-family: Georgia, serif;
+    margin-left: 10px;
+}
+
+.georgia-handlers {
+    font-family: Georgia, serif;
+}
+
+
+.growing-hendler {
+    text-align: center;
+    font-family: Academy;
+    font-size: 35px;
+    color: black;
+}
+
+.growing-section {
+    margin-left: 28px;
+    font-family: Academy;
+    font-size: 28px;
+    color: #500EFE;
+}
+
+.growing-href {
+    margin-left: 2cm;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: oblique;
+    text-decoration: underline;
+    color: #191970;
+}
+
+.growing-photo1 {
+    width: 550px;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.growing-photo2 {
+    width: 230px;
+    height: 170px;
+    margin-top: 4.4cm;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.growing-p1 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.growing-p2 {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.advice {
+    margin-left: 1.5cm;
+}
+.btn-advice {
+   width: 8cm;
+   background-color: #15B272;
+}
+
+.academy-remiding {
+    text-align: center;
+    font-family: Academy;
+    color: #E4462B;
+}
+
+.academy-users {
+    text-align: center;
+    font-family: Academy;
+    color: #006400;
+}
+
+.academy-field {
+    text-align: center;
+    font-family: Academy;
+    color: #753800;
+}
+
+.academy-fruit {
+    text-align: center;
+    font-family: Academy;
+    color: #0E774C;
+}
+
+.modal-warning {
+    background-color: #f0ad4e;
+    color:#fff;
+}
+
+
+/*Breeding styles :*/
+.breeding {
+    margin-top: -15px;
+    margin-left: 0;
+    width: 1140px;
+    height: 1580px;
+    padding: 0.2px;
+    background-image: url("/Images/Breeding.jpg");
+}
+
+
+.breeding-section {
+    margin-left: 40px;
+    font-family: Academy;
+    font-size: 28px;
+    color: #4C0B00;
+}
+
+.breeding-birdsection {
+    margin-left: 2cm;
+    font-family: Academy;
+    font-size: 23px;
+    color: #1C507D;
+}
+
+.breeding-href {
+    margin-left: 2cm;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: oblique;
+    text-decoration: underline;
+    color: #370560;
+}
+
+.div-width {
+    width: 2cm;
+}
+
+.div-bird {
+    margin-top: 7px;
+}
+
+.breeding-birdhref {
+    margin-left: 2cm;
+    font-family:  Academy;
+    font-size: 23px;
+    color: #1C507D;
+}
+
+.breeding-pinscherdog {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: oblique;
+    text-decoration: underline;
+    color: #370560;
+}
+
+.between-doglinks {
+    margin-bottom: 7px;
+}
+
+.academy-camel {
+    text-align: center;
+    font-family: Academy;
+    color: #d3660d
+}
+
+.academy-bee {
+    text-align: center;
+    font-family: Academy;
+    color: #435969
+}
+
+.academy-dog {
+    text-align: center;
+    font-family: Academy;
+    font-size: 28px;
+    color: #435969
+}
+
+.breeding-photo1 {
+    width: 230px;
+    height: 170px;
+    margin-top: 0.4cm;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.breeding-photo2 {
+    width: 230px;
+    height: 170px;
+    margin-top: 2.2cm;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.breeding-photo3 {
+    width: 510px;
+    height: 300px;
+    margin-top: 14px;
+    margin-left: 20px;
+}
+

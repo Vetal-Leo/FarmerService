@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Infrastructure.Exceptions.NotReceiveException">
+    <Position X="52.5" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotReceiveException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Infrastructure.Repository.BaseRepository&lt;TEntity&gt;">
+    <Position X="18.5" Y="18.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>DAIAAAAAACAABEBBAAAAIAEAAAEAAAgAAAAAAAAAAIA=</HashCode>
+      <FileName>Repository\BaseRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BeeComingsRepository" Collapsed="true">
+    <Position X="41.75" Y="20.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BeeComingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BeeHoneyRepository">
+    <Position X="52.5" Y="21" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BeeHoneyRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingChargesRepository">
+    <Position X="52.75" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingChargesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingComingsRepository">
+    <Position X="42.5" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingComingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingCulturesRepository">
+    <Position X="33.25" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingCulturesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingDailyProfitRepository">
+    <Position X="21.75" Y="20.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingDailyProfitRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingProfitRepository">
+    <Position X="22" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingProfitRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingRemindingRepository">
+    <Position X="32.5" Y="20.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingRemindingRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.BreedingTypeRepository" Collapsed="true">
+    <Position X="45.5" Y="21" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\BreedingTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.FishComingsRepository">
+    <Position X="56" Y="21" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\FishComingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.FishProfitRepository">
+    <Position X="49.5" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\FishProfitRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.HoneyTypeRepository">
+    <Position X="39.75" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\HoneyTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Breeding.YoungBreedingRepository">
+    <Position X="29" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Breeding\YoungBreedingRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingChargesRepository">
+    <Position X="25.25" Y="20.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingChargesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingCulturesRepository">
+    <Position X="18.75" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingCulturesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingFieldComingsRepository">
+    <Position X="35.25" Y="20.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingFieldComingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingFieldProfitsRepository">
+    <Position X="49" Y="21" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingFieldProfitsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingFruitComingsRepository">
+    <Position X="56.25" Y="25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingFruitComingsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingFruitProfitsRepository">
+    <Position X="46" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingFruitProfitsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Growing.GrowingTypeRepository">
+    <Position X="36.5" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Growing\GrowingTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Users.PhotoRepository">
+    <Position X="25.25" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Users\PhotoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Users.ProfilesRepository">
+    <Position X="38.5" Y="20.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Users\ProfilesRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Users.RemindingRepository">
+    <Position X="29" Y="20.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Users\RemindingRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Repository.Users.UsersRepository">
+    <Position X="18.75" Y="16" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\Users\UsersRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastructure.Stores.ApplicationUserStore">
+    <Position X="45.5" Y="14" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stores\ApplicationUserStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBeeComingsRepository">
+    <Position X="31.25" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBeeComingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBeeHoneyRepository">
+    <Position X="43.25" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBeeHoneyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingChargesRepository">
+    <Position X="25.5" Y="13.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingChargesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingComingsRepository">
+    <Position X="25.5" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingComingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingCulturesRepository">
+    <Position X="37.25" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingCulturesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingDailyProfitRepository">
+    <Position X="43.5" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingDailyProfitRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingProfitRepository">
+    <Position X="50" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingProfitRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingRemindingRepository">
+    <Position X="24.75" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingRemindingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IBreedingTypeRepository">
+    <Position X="34" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IBreedingTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IFishComingsRepository">
+    <Position X="46.75" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IFishComingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IFishProfitRepository">
+    <Position X="29.25" Y="13.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IFishProfitRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IHoneyTypeRepository">
+    <Position X="28.5" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IHoneyTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Breeding.IYoungBreedingRepository">
+    <Position X="40.5" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Breeding\IYoungBreedingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingChargesRepository">
+    <Position X="46.75" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingChargesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingCulturesRepository">
+    <Position X="53.25" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingCulturesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingFieldComingsRepository">
+    <Position X="28" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingFieldComingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingFieldProfitsRepository">
+    <Position X="37" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingFieldProfitsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingFruitComingsRepository">
+    <Position X="49.75" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingFruitComingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingFruitProfitsRepository">
+    <Position X="33" Y="13.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingFruitProfitsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Growing.IGrowingTypeRepository">
+    <Position X="31.25" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Growing\IGrowingTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.IEntity&lt;TKey&gt;">
+    <Position X="43.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.IEntity">
+    <Position X="41" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.IRepositoryAsync&lt;TEntity&gt;">
+    <Position X="22.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAAIAEAAAEAAAgAAAAAAAAAAIA=</HashCode>
+      <FileName>Interfaces\IRepositoryAcync.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.IUnitOfWork">
+    <Position X="18.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Users.IPhotoRepository">
+    <Position X="40.5" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Users\IPhotoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Users.IProfilesRepository">
+    <Position X="52.75" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Users\IProfilesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Users.IRemindingRepository">
+    <Position X="37" Y="13.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Users\IRemindingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Infrastructure.Interfaces.Users.IUsersRepository">
+    <Position X="34.25" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Users\IUsersRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

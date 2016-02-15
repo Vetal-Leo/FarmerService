@@ -1,0 +1,68 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@{
+    ViewBag.Title = "Растениеводство";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="growing">
+    <h4 class="georgia-handler">Сервис Растениеводство.</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="growing-hendler">Полевые</h2>
+            <span class="growing-section">Хлебные культуры</span><br />
+            <a class="growing-href" href="~/Growing/BreadComing">Хлебные</a><br />
+            <a class="growing-href" href="~/Growing/LeguminousComing">Зернобобовые</a><br />
+            <span class="growing-section">Овощные культуры</span><br />
+            <a class="growing-href" href="~/Growing/TuberComing">Kлубнеплоды/Kорнеплоды</a><br />
+            <a class="growing-href" href="~/Growing/SpicyComing">Kапустные/Салатные/Пряные</a><br />
+            <a class="growing-href" href="~/Growing/MelonComing">Луковичные/Паслёновые/Бахчевые/Десертные</a><br />
+            <span class="growing-section">Технические культуры</span><br/>
+            <a class="growing-href" href="~/Growing/OliveComing">Масличные</a><br/> 
+            <span class="growing-section">Кормовые культуры</span><br/>
+            <a class="growing-href" href="~/Growing/SilageComing">Силосные</a><br />
+            <a class="growing-href" href="~/Growing/FodderComing">Кормовые корнеплоды/клубнеплоды/бахчевые</a><br />
+            <a class="growing-href" href="~/Growing/ForageComing">Зернофуражные</a><br />
+            <img class="growing-photo1" src="~/Images/Komb.jpg" alt="Идет загрузка фото" />
+        </div>
+        <div class="col-md-6">
+            <h2 class="growing-hendler">Плодовые</h2>
+            <span class="growing-section">Деревья</span><br />
+            <div class="form-inline">
+                <a class="growing-href" href="~/Growing/BergamotComing">А-И</a>
+                <a class="growing-href" href="~/Growing/KepelComing">К-П</a>
+                <a class="growing-href" href="~/Growing/FinikComing">Р-Я</a>
+            </div>
+            <span class="growing-section">Кустарники</span><br/>
+            <div class="form-inline">
+                <a class="growing-href" href="~/Growing/CrataeguComing">А-К</a>
+                <a class="growing-href" href="~/Growing/TernComing">Л-Ш</a>
+            </div>
+            <span class="growing-section">Травянистые растения</span><br/>
+            <a class="growing-href" href="~/Growing/StrawberryComing">Земляника/Клубника</a><br/><br/><br/><br/>
+            <img class="growing-photo2" src="~/Images/Appls.jpg" alt="Идет загрузка фото" />
+            <img id="growing" class="growing-photo2" alt="&nbsp;&nbsp;Загрузите фото в личном кабинете" />
+            <p class="growing-p1">
+                Как бы мы не любили природную и первозданную красоту, мы осознаём, что плодовые деревья и кустарники нуждаются в особом уходе.
+                Их функция в саду – плодоношение. И выполнить её они смогут в полной мере, если садовод будет помнить, насколько важна
+                <a href="http://diz-cafe.com/rastenija/obrezka-plodovyx-derevev.html">обрезка плодовых деревьев</a>
+                осенью, зимой и особенно весной.
+            </p>
+        </div>
+    </div>
+    <p class="growing-p2">
+        <a href="http://dic.academic.ru/dic.nsf/bse/76212/%D0%92%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B8#sel=">Вредители сельскохозяйственных растений</a> животные
+        повреждающие культурные растения или вызывающие их гибель.
+        Ущерб, причиняемый вредителями и болезнями растений, велик: по данным Организации по продовольствию и сельскому хозяйству (ФАО) ООН,
+        мировые потери ежегодно составляют примерно 20—25% потенциального мирового урожая продовольственных культур.
+        A наибольший ущерб урожаю наносят насекомые, что объясняется прежде всего их биологическими особенностями, обилием видов, 
+        высокой плодовитостью и быстротой размножения.
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({ method: "GET", url: "/api/User/GetPhotosAndData" }).
+    success(function (data) {
+        $("#growing").attr('src', '/StoreImages/StoreImages/' + data[1]);
+    });
+    });
+</script>

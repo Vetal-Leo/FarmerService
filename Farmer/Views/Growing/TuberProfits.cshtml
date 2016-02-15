@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Domain.Entities.Growing.GrowingFieldProfits>
+
+@{
+    ViewBag.Title = "Клубнеплоды/Корнеплоды - Уход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Растениеводство.</h4>
+<h1 class="academy-field">Клубнеплоды-Корнеплоды</h1>
+<br />
+<p class="shift"><a href="/Growing/TuberComing">Приход</a> &#10132; <a href="/Growing/TuberCharges">Затраты</a> &#10132; Уход </p>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CultureType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpirationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remind)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MassType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClearCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfitCost)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CultureType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpirationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remind)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MassType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Смотреть", null, new { id = item.Id }, new { @class = "btn btn-success btn-xs", href = item.Document, target = "_blank", title = "Предварительно загрузите PDF - файл!" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClearCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfitCost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "TuberProfitEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+</div>
+
+

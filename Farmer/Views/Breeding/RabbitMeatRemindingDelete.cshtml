@@ -1,0 +1,25 @@
+﻿@model Domain.Entities.Breeding.BreedingReminder
+
+@{
+    ViewBag.Title = "Кролиководство (Мясные и Пуховые породы) - Удаление напоминаний";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-camel">Кролиководство (Мясные и Пуховые породы). Напоминания.</h3>
+<h3>Вы уверены, что хотите это удалить &nbsp; @Model.AnimalName ?</h3>
+<h4>Удаление напоминания :</h4>
+<h6>@Model.Text</h6>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+        <br />
+        @Html.ActionLink("Назад в Кролиководство (Мясные и Пуховые породы). Напоминания.", "RabbitMeatRemindings")
+    }
+
+</div>
+
+

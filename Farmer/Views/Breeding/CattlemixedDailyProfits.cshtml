@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Domain.Entities.Breeding.BreedingDailyProfit>
+
+@{
+    ViewBag.Title = "Скотоводство(Мясо-молочные породы) - Ежедневная прибыль";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h1 class="academy-bee">Скотоводство(Мясо-молочные породы)</h1>
+<br />
+<p class="shift">
+    <a href="/Breeding/CattlemixedYoung">Молодняк</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="/Breeding/CattlemixedComing">Приход</a> &#10132; <a href="/Breeding/CattlemixedCharges">Затраты</a> &nbsp;
+    Ежедневная прибыль &#10132; <a href="/Breeding/CattlemixedProfits">Уход</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="/Breeding/CattlemixedRemindings">Напоминания</a>
+</p>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MassType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.СlearCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfitCost)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MassType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Смотреть", null, new { id = item.Id }, new { @class = "btn btn-success btn-xs", href = item.Document, target = "_blank", title = "Предварительно загрузите PDF - файл!" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.СlearCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfitCost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "CattlemixedDailyProfitEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "CattlemixedDailyProfitDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+    <a class="btn btn-primary btn-xs inlet" href="/Breeding/CattlemixedDailyProfitCreate">Добавить</a>
+</div>
+
+

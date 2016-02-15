@@ -1,0 +1,121 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" ng-app="userapp">
+    <div class="col-md-4" ng-controller="userController">
+        <img src="/StoreImages/StoreImages/{{User.avatar}}" alt="Идет загрузка фото" width="300" height="300"/>    
+        <h3 class="tahoma">
+            <span class="admin">Администратор сайта</span>
+            <span class="georgia">Фермер:&nbsp;&nbsp;&nbsp;</span>{{User.name}} {{User.patronymic}} {{User.lastname}}&nbsp;&nbsp;&nbsp;
+        </h3>
+        <h4 class="tahoma-black">{{User.age}} лет.</h4>
+        <div class="form-inline">
+            <a class="personal" href="/UserSimple/Cabinet">Личный кабинет</a>
+            <a class="user-panel" href="/UserSimple/Users">Пользователи</a>
+            <audio src="/Images/k.mp3" id="audio"></audio>
+        </div>      
+        <br />
+        <label class="remind"><input id="remind" type="checkbox">&nbsp;&nbsp;Напоминать</label>
+        <a class="reminding" id="remiding" href="/UserSimple/Reminding">Напоминание!</a>
+    </div>
+    <div class="row col-md-8  main">
+        <div class="col-md-8"></div>
+        <div class="col-md-4">
+            <br />
+            <a class="main-references" href="~/Growing/Index">Растениеводство</a><br />
+            <a class="main-references" href="~/Breeding/Index">Животноводство</a>
+        </div>
+    </div>
+</div>
+<br />
+<div>
+    <p>
+        Согласно Конституции Украины земля является основным национальным богатством. От имени Украинского народа права собственника осуществляют органы
+        государственной власти и органы местного самоуправления. Они от его имени распоряжаются землями и обязаны реализовывать право граждан на
+        безвозмездную <a href="http://meget.kiev.ua/prodaja-nedvizimosti/privatizatsiya/privatizatsiya-zemli/">приватизацию земли</a> согласно закону.
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h3>Курс топлива</h3>
+        <img src="~/Images/Fuel.jpg" alt="Идет загрузка фото" />
+        <p>Предоставление курсов топлива во всех заправках нашей страны.</p>
+        <p>
+            <a class="btn btn-xs btn-primary" href="http://finance.i.ua/fuel/">Воспользуйтесь сервисом &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h3>Погода</h3>
+        <img src="~/Images/Weather.jpg" alt="Идет загрузка фото" />
+        <p>Данные о погоде в нашей стране и в мире. Смотрите также погоду в вашем регионе.</p>
+        <p>
+            <a class="btn btn-xs btn-primary" href="https://pogoda.yandex.ua/">Воспользуйтесь сервисом &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h3>Курс валют</h3>
+        <img src="~/Images/Currency.jpg" alt="Идет загрузка фото" />
+        <p>Предоставление курсов валют во всех банках нашей страны.</p>
+        <p>
+            <a class="btn btn-xs btn-primary" href="http://kurs.com.ua/usd?gclid=CMeh0vv3u74CFfQQtAodNVIAPQ">Воспользуйтесь сервисом &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h3>Торговая площадка</h3>
+        <img src="~/Images/FloorSpace.jpg" alt="Идет загрузка фото" />
+        <p>Посмотрите и воспользуйтесь сервисом совершенно бесплатно.</p>
+        <p>
+            <a class="btn  btn-xs btn-primary" href="~/Trading/Trading">Воспользуйтесь сервисом &raquo;</a>
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    // Filling this page.
+    var app = angular.module("userapp", []);
+    app.controller("userController", function ($scope, $http) {
+        $http({ method: "GET", url: "api/User/GetUser" }).
+        success(function (data) {
+            $scope.User = {
+                avatar: data[0], name: data[1], lastname: data[2],
+                patronymic: data[3], age: data[4]
+            }
+            if (data[5] === "True") $('#remind').attr("checked", "checked");
+                remiding();
+            });
+    });
+
+   //Сall the reminder function when the page loads.
+    $(document).ready(function () {
+        remiding();
+    });
+
+    //Сatching changes in the checkbox.
+    $("input:checkbox").bind("change click", function () {
+        $.ajax({ method: "POST", url: "/api/User/SetRemindState?id=1&remindState=" + $('#remind').prop("checked") });
+    });
+
+   // Function call reminders.
+    function remiding() {
+        if ($('#remind').prop("checked")) {
+            $.ajax({ method: "GET", url: "/api/User/GetRemiding" }).
+              success(function (data) {
+                  if (data === true) {
+                      $('#remiding').css("visibility", "visible");
+                      $('audio').attr("autoplay", "autoplay");
+                      var t = setInterval(function () {
+                          $("#remiding").fadeToggle(1000);
+                      }, 2000);
+                      setTimeout(function () {
+                          clearInterval(t);
+                      }, 28000);
+                  }
+                  else $('#remiding').css("visibility", "hidden");
+              });
+        }
+    }
+</script>

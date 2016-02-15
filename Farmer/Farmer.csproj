@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23A114A1-7220-4B93-B6CF-CF8EFB081119}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Farmer</RootNamespace>
+    <AssemblyName>Farmer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingBeeController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingBorzoidogController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingCattlemeatController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingCattlemilkController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingCattlemixedController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingGoatController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingGooseController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingHenEggController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingHenMeatController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingHorseController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingHoundsdogController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingPinscherdogController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingPonyController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingQuailController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingRabbitMeatController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingRabbitSkinController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingSheepController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingSwineController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingTeplovyeFishController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingСamelController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingApiController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingСoldwaterFishController.cs" />
+    <Compile Include="Controllers\Breeding\BreedingСopsdogController.cs" />
+    <Compile Include="Controllers\Growing\FileClearController.cs" />
+    <Compile Include="Controllers\Growing\GrowingApiController.cs" />
+    <Compile Include="Controllers\Growing\GrowingBergamotController.cs" />
+    <Compile Include="Controllers\Growing\GrowingBreadController.cs" />
+    <Compile Include="Controllers\Growing\GrowingCrataeguController.cs" />
+    <Compile Include="Controllers\Growing\GrowingFinikController.cs" />
+    <Compile Include="Controllers\Growing\GrowingFodderController.cs" />
+    <Compile Include="Controllers\Growing\GrowingForageController.cs" />
+    <Compile Include="Controllers\Growing\GrowingKepelController.cs" />
+    <Compile Include="Controllers\Growing\GrowingLeguminousController.cs" />
+    <Compile Include="Controllers\Growing\GrowingMelonController.cs" />
+    <Compile Include="Controllers\Growing\GrowingOliveController.cs" />
+    <Compile Include="Controllers\Growing\GrowingSilageController.cs" />
+    <Compile Include="Controllers\Growing\GrowingSpicyController.cs" />
+    <Compile Include="Controllers\Growing\GrowingStrawberryController.cs" />
+    <Compile Include="Controllers\Growing\GrowingTernController.cs" />
+    <Compile Include="Controllers\Growing\GrowingTuberController.cs" />
+    <Compile Include="Controllers\Growing\PlantingDatesApiController.cs" />
+    <Compile Include="Controllers\Growing\PlantingMethods.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeUser\UserController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Diagram\DataBaseDiagram.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBaseDiagram.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Jcrop.gif" />
+    <Content Include="Content\jquery.Jcrop.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\AcademyBoldItalic.svg" />
+    <Content Include="fonts\CricketNormal.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Appls.jpg" />
+    <Content Include="Images\Bee.jpg" />
+    <Content Include="Images\Breeding.jpg" />
+    <Content Include="Images\Cow.jpg" />
+    <Content Include="Images\Dog.jpg" />
+    <Content Include="Images\Duck.jpg" />
+    <Content Include="Images\Growing.jpg" />
+    <Content Include="Images\Cone.jpg" />
+    <Content Include="Images\Currency.jpg" />
+    <Content Include="Images\Empty.jpg" />
+    <Content Include="Images\Empty2.jpg" />
+    <Content Include="Images\Farmer.ico" />
+    <Content Include="Images\Farmer.png" />
+    <Content Include="Images\Fifth.jpg" />
+    <Content Include="Images\Fist.jpg" />
+    <Content Include="Images\FloorSpace.jpg" />
+    <Content Include="Images\Fourth.jpg" />
+    <Content Include="Images\Fuel.jpg" />
+    <Content Include="Images\Horse.jpg" />
+    <Content Include="Images\Komb.jpg" />
+    <Content Include="Images\Main.jpg" />
+    <Content Include="Images\Second.jpg" />
+    <Content Include="Images\Seventh.jpg" />
+    <Content Include="Images\Sixth.jpg" />
+    <Content Include="Images\Third.jpg" />
+    <Content Include="Images\Weather.jpg" />
+    <Content Include="Images\k.mp3" />
+    <Content Include="Images\Сow.jpg" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\AcademyBoldItalic.eot" />
+    <Content Include="fonts\AcademyBoldItalic.ttf" />
+    <Content Include="fonts\AcademyBoldItalic.woff" />
+    <Content Include="fonts\AcademyBoldItalic.woff2" />
+    <Content Include="fonts\CricketNormal.eot" />
+    <Content Include="fonts\CricketNormal.ttf" />
+    <Content Include="fonts\CricketNormal.woff" />
+    <Content Include="fonts\CricketNormal.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <EntityDeploy Include="Diagram\DataBaseDiagram.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataBaseDiagram.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Diagram\FarmerServiceDiagram.cd" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile2.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.color.js" />
+    <Content Include="Scripts\jquery.Jcrop.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="StoreImages\Storeimages\Empty.jpg" />
+    <Content Include="StoreImages\Storeimages\Empty2.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\AccountSimple\Activation.cshtml" />
+    <Content Include="Views\AccountSimple\Login.cshtml" />
+    <Content Include="Views\AccountSimple\Register.cshtml" />
+    <Content Include="Views\Breeding\Index.cshtml" />
+    <Content Include="Views\Growing\BergamotCharges.cshtml" />
+    <Content Include="Views\Growing\BergamotChargesCreate.cshtml" />
+    <Content Include="Views\Growing\BergamotChargesDelete.cshtml" />
+    <Content Include="Views\Growing\BergamotChargesEdit.cshtml" />
+    <Content Include="Views\Growing\BergamotComing.cshtml" />
+    <Content Include="Views\Growing\BergamotComingCreate.cshtml" />
+    <Content Include="Views\Growing\BergamotComingDelete.cshtml" />
+    <Content Include="Views\Growing\BergamotComingEdit.cshtml" />
+    <Content Include="Views\Growing\BergamotProfitEdit.cshtml" />
+    <Content Include="Views\Growing\BergamotProfits.cshtml" />
+    <Content Include="Views\Growing\BreadCharges.cshtml" />
+    <Content Include="Views\Growing\BreadChargesCreate.cshtml" />
+    <Content Include="Views\Growing\BreadChargesDelete.cshtml" />
+    <Content Include="Views\Growing\BreadChargesEdit.cshtml" />
+    <Content Include="Views\Growing\BreadComing.cshtml" />
+    <Content Include="Views\Growing\BreadComingCreate.cshtml" />
+    <Content Include="Views\Growing\BreadComingDelete.cshtml" />
+    <Content Include="Views\Growing\BreadComingEdit.cshtml" />
+    <Content Include="Views\Growing\BreadProfitEdit.cshtml" />
+    <Content Include="Views\Growing\BreadProfits.cshtml" />
+    <Content Include="Views\Growing\CrataeguCharges.cshtml" />
+    <Content Include="Views\Growing\CrataeguChargesCreate.cshtml" />
+    <Content Include="Views\Growing\CrataeguChargesDelete.cshtml" />
+    <Content Include="Views\Growing\CrataeguChargesEdit.cshtml" />
+    <Content Include="Views\Growing\CrataeguComing.cshtml" />
+    <Content Include="Views\Growing\CrataeguComingCreate.cshtml" />
+    <Content Include="Views\Growing\CrataeguComingDelete.cshtml" />
+    <Content Include="Views\Growing\CrataeguComingEdit.cshtml" />
+    <Content Include="Views\Growing\CrataeguProfitEdit.cshtml" />
+    <Content Include="Views\Growing\CrataeguProfits.cshtml" />
+    <Content Include="Views\Growing\FinikCharges.cshtml" />
+    <Content Include="Views\Growing\FinikChargesCreate.cshtml" />
+    <Content Include="Views\Growing\FinikChargesDelete.cshtml" />
+    <Content Include="Views\Growing\FinikChargesEdit.cshtml" />
+    <Content Include="Views\Growing\FinikComing.cshtml" />
+    <Content Include="Views\Growing\FinikComingCreate.cshtml" />
+    <Content Include="Views\Growing\FinikComingDelete.cshtml" />
+    <Content Include="Views\Growing\FinikComingEdit.cshtml" />
+    <Content Include="Views\Growing\FinikProfitEdit.cshtml" />
+    <Content Include="Views\Growing\FinikProfits.cshtml" />
+    <Content Include="Views\Growing\FodderCharges.cshtml" />
+    <Content Include="Views\Growing\FodderChargesCreate.cshtml" />
+    <Content Include="Views\Growing\FodderChargesDelete.cshtml" />
+    <Content Include="Views\Growing\FodderChargesEdit.cshtml" />
+    <Content Include="Views\Growing\FodderComing.cshtml" />
+    <Content Include="Views\Growing\FodderComingCreate.cshtml" />
+    <Content Include="Views\Growing\FodderComingDelete.cshtml" />
+    <Content Include="Views\Growing\FodderComingEdit.cshtml" />
+    <Content Include="Views\Growing\FodderProfitEdit.cshtml" />
+    <Content Include="Views\Growing\FodderProfits.cshtml" />
+    <Content Include="Views\Growing\ForageCharges.cshtml" />
+    <Content Include="Views\Growing\ForageChargesCreate.cshtml" />
+    <Content Include="Views\Growing\ForageChargesDelete.cshtml" />
+    <Content Include="Views\Growing\ForageChargesEdit.cshtml" />
+    <Content Include="Views\Growing\ForageComing.cshtml" />
+    <Content Include="Views\Growing\ForageComingCreate.cshtml" />
+    <Content Include="Views\Growing\ForageComingDelete.cshtml" />
+    <Content Include="Views\Growing\ForageComingEdit.cshtml" />
+    <Content Include="Views\Growing\ForageProfitEdit.cshtml" />
+    <Content Include="Views\Growing\ForageProfits.cshtml" />
+    <Content Include="Views\Growing\Index.cshtml" />
+    <Content Include="Views\Growing\KepelCharges.cshtml" />
+    <Content Include="Views\Growing\KepelChargesCreate.cshtml" />
+    <Content Include="Views\Growing\KepelChargesDelete.cshtml" />
+    <Content Include="Views\Growing\KepelChargesEdit.cshtml" />
+    <Content Include="Views\Growing\KepelComing.cshtml" />
+    <Content Include="Views\Growing\KepelComingCreate.cshtml" />
+    <Content Include="Views\Growing\KepelComingDelete.cshtml" />
+    <Content Include="Views\Growing\KepelComingEdit.cshtml" />
+    <Content Include="Views\Growing\KepelProfitEdit.cshtml" />
+    <Content Include="Views\Growing\KepelProfits.cshtml" />
+    <Content Include="Views\Growing\LeguminousCharges.cshtml" />
+    <Content Include="Views\Growing\LeguminousChargesCreate.cshtml" />
+    <Content Include="Views\Growing\LeguminousChargesDelete.cshtml" />
+    <Content Include="Views\Growing\LeguminousChargesEdit.cshtml" />
+    <Content Include="Views\Growing\LeguminousComing.cshtml" />
+    <Content Include="Views\Growing\LeguminousComingCreate.cshtml" />
+    <Content Include="Views\Growing\LeguminousComingDelete.cshtml" />
+    <Content Include="Views\Growing\LeguminousComingEdit.cshtml" />
+    <Content Include="Views\Growing\LeguminousProfitEdit.cshtml" />
+    <Content Include="Views\Growing\LeguminousProfits.cshtml" />
+    <Content Include="Views\Growing\MelonCharges.cshtml" />
+    <Content Include="Views\Growing\MelonChargesCreate.cshtml" />
+    <Content Include="Views\Growing\MelonChargesDelete.cshtml" />
+    <Content Include="Views\Growing\MelonChargesEdit.cshtml" />
+    <Content Include="Views\Growing\MelonComing.cshtml" />
+    <Content Include="Views\Growing\MelonComingCreate.cshtml" />
+    <Content Include="Views\Growing\MelonComingDelete.cshtml" />
+    <Content Include="Views\Growing\MelonComingEdit.cshtml" />
+    <Content Include="Views\Growing\MelonProfitEdit.cshtml" />
+    <Content Include="Views\Growing\MelonProfits.cshtml" />
+    <Content Include="Views\Growing\OliveCharges.cshtml" />
+    <Content Include="Views\Growing\OliveChargesCreate.cshtml" />
+    <Content Include="Views\Growing\OliveChargesDelete.cshtml" />
+    <Content Include="Views\Growing\OliveChargesEdit.cshtml" />
+    <Content Include="Views\Growing\OliveComing.cshtml" />
+    <Content Include="Views\Growing\OliveComingCreate.cshtml" />
+    <Content Include="Views\Growing\OliveComingDelete.cshtml" />
+    <Content Include="Views\Growing\OliveComingEdit.cshtml" />
+    <Content Include="Views\Growing\OliveProfitEdit.cshtml" />
+    <Content Include="Views\Growing\OliveProfits.cshtml" />
+    <Content Include="Views\Growing\SilageCharges.cshtml" />
+    <Content Include="Views\Growing\SilageChargesCreate.cshtml" />
+    <Content Include="Views\Growing\SilageChargesDelete.cshtml" />
+    <Content Include="Views\Growing\SilageChargesEdit.cshtml" />
+    <Content Include="Views\Growing\SilageComing.cshtml" />
+    <Content Include="Views\Growing\SilageComingCreate.cshtml" />
+    <Content Include="Views\Growing\SilageComingDelete.cshtml" />
+    <Content Include="Views\Growing\SilageComingEdit.cshtml" />
+    <Content Include="Views\Growing\SilageProfitEdit.cshtml" />
+    <Content Include="Views\Growing\SilageProfits.cshtml" />
+    <Content Include="Views\Growing\SpicyCharges.cshtml" />
+    <Content Include="Views\Growing\SpicyChargesCreate.cshtml" />
+    <Content Include="Views\Growing\SpicyChargesDelete.cshtml" />
+    <Content Include="Views\Growing\SpicyChargesEdit.cshtml" />
+    <Content Include="Views\Growing\SpicyComing.cshtml" />
+    <Content Include="Views\Growing\SpicyComingCreate.cshtml" />
+    <Content Include="Views\Growing\SpicyComingDelete.cshtml" />
+    <Content Include="Views\Growing\SpicyComingEdit.cshtml" />
+    <Content Include="Views\Growing\SpicyProfitEdit.cshtml" />
+    <Content Include="Views\Growing\SpicyProfits.cshtml" />
+    <Content Include="Views\Growing\StrawberryCharges.cshtml" />
+    <Content Include="Views\Growing\StrawberryChargesCreate.cshtml" />
+    <Content Include="Views\Growing\StrawberryChargesDelete.cshtml" />
+    <Content Include="Views\Growing\StrawberryChargesEdit.cshtml" />
+    <Content Include="Views\Growing\StrawberryComing.cshtml" />
+    <Content Include="Views\Growing\StrawberryComingCreate.cshtml" />
+    <Content Include="Views\Growing\StrawberryComingDelete.cshtml" />
+    <Content Include="Views\Growing\StrawberryComingEdit.cshtml" />
+    <Content Include="Views\Growing\StrawberryProfitEdit.cshtml" />
+    <Content Include="Views\Growing\StrawberryProfits.cshtml" />
+    <Content Include="Views\Growing\TernCharges.cshtml" />
+    <Content Include="Views\Growing\TernChargesCreate.cshtml" />
+    <Content Include="Views\Growing\TernChargesDelete.cshtml" />
+    <Content Include="Views\Growing\TernChargesEdit.cshtml" />
+    <Content Include="Views\Growing\TernComing.cshtml" />
+    <Content Include="Views\Growing\TernComingCreate.cshtml" />
+    <Content Include="Views\Growing\TernComingDelete.cshtml" />
+    <Content Include="Views\Growing\TernComingEdit.cshtml" />
+    <Content Include="Views\Growing\TernProfitEdit.cshtml" />
+    <Content Include="Views\Growing\TernProfits.cshtml" />
+    <Content Include="Views\Growing\TuberCharges.cshtml" />
+    <Content Include="Views\Growing\TuberChargesCreate.cshtml" />
+    <Content Include="Views\Growing\TuberChargesDelete.cshtml" />
+    <Content Include="Views\Growing\TuberChargesEdit.cshtml" />
+    <Content Include="Views\Growing\TuberComing.cshtml" />
+    <Content Include="Views\Growing\TuberComingCreate.cshtml" />
+    <Content Include="Views\Growing\TuberComingDelete.cshtml" />
+    <Content Include="Views\Growing\TuberComingEdit.cshtml" />
+    <Content Include="Views\Growing\TuberProfitEdit.cshtml" />
+    <Content Include="Views\Growing\TuberProfits.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\UserSimple\Cabinet.cshtml" />
+    <Content Include="Views\UserSimple\ChangeLogin.cshtml" />
+    <Content Include="Views\UserSimple\ChangePassword.cshtml" />
+    <Content Include="Views\UserSimple\ConfirmLogin.cshtml" />
+    <Content Include="Views\UserSimple\Index.cshtml" />
+    <Content Include="Views\UserSimple\Reminding.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Breeding\CamelComing.cshtml" />
+    <Content Include="Views\Breeding\CamelYoung.cshtml" />
+    <Content Include="Views\Breeding\CamelYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\CamelYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\CamelComingCreate.cshtml" />
+    <Content Include="Views\Breeding\CamelComingEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelComingDelete.cshtml" />
+    <Content Include="Views\Breeding\CamelProfits.cshtml" />
+    <Content Include="Views\Breeding\CamelProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelCharges.cshtml" />
+    <Content Include="Views\Breeding\CamelChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\CamelChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\CamelDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\CamelDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\CamelDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\CamelRemindings.cshtml" />
+    <Content Include="Views\Breeding\CamelRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\CamelRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\CamelRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\GoatYoung.cshtml" />
+    <Content Include="Views\Breeding\GoatComing.cshtml" />
+    <Content Include="Views\Breeding\GoatYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\GoatYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\GoatComingCreate.cshtml" />
+    <Content Include="Views\Breeding\GoatComingEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatComingDelete.cshtml" />
+    <Content Include="Views\Breeding\GoatCharges.cshtml" />
+    <Content Include="Views\Breeding\GoatChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\GoatChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\GoatDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\GoatDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\GoatDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\GoatProfits.cshtml" />
+    <Content Include="Views\Breeding\GoatProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatRemindings.cshtml" />
+    <Content Include="Views\Breeding\GoatRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\GoatRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\GoatRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\HorseComing.cshtml" />
+    <Content Include="Views\Breeding\HorseYoung.cshtml" />
+    <Content Include="Views\Breeding\HorseYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\HorseYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\HorseComingCreate.cshtml" />
+    <Content Include="Views\Breeding\HorseComingEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseComingDelete.cshtml" />
+    <Content Include="Views\Breeding\HorseCharges.cshtml" />
+    <Content Include="Views\Breeding\HorseChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\HorseChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\HorseDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\HorseDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\HorseDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\HorseProfits.cshtml" />
+    <Content Include="Views\Breeding\HorseProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseRemindings.cshtml" />
+    <Content Include="Views\Breeding\HorseRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\HorseRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\HorseRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\PonyComing.cshtml" />
+    <Content Include="Views\Breeding\PonyComingCreate.cshtml" />
+    <Content Include="Views\Breeding\PonyComingEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyComingDelete.cshtml" />
+    <Content Include="Views\Breeding\PonyYoung.cshtml" />
+    <Content Include="Views\Breeding\PonyYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\PonyYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\PonyCharges.cshtml" />
+    <Content Include="Views\Breeding\PonyChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\PonyChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\PonyDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\PonyDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\PonyDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\PonyProfits.cshtml" />
+    <Content Include="Views\Breeding\PonyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyRemindings.cshtml" />
+    <Content Include="Views\Breeding\PonyRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\PonyRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\PonyRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\SheepComing.cshtml" />
+    <Content Include="Views\Breeding\SheepComingCreate.cshtml" />
+    <Content Include="Views\Breeding\SheepComingEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepComingDelete.cshtml" />
+    <Content Include="Views\Breeding\SheepYoung.cshtml" />
+    <Content Include="Views\Breeding\SheepYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\SheepYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\SheepCharges.cshtml" />
+    <Content Include="Views\Breeding\SheepChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\SheepChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\SheepDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\SheepDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\SheepDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\SheepDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepProfits.cshtml" />
+    <Content Include="Views\Breeding\SheepProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepRemindings.cshtml" />
+    <Content Include="Views\Breeding\SheepRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\SheepRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\SheepRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\SwineComing.cshtml" />
+    <Content Include="Views\Breeding\SwineComingCreate.cshtml" />
+    <Content Include="Views\Breeding\SwineComingEdit.cshtml" />
+    <Content Include="Views\Breeding\SwineComingDelete.cshtml" />
+    <Content Include="Views\Breeding\SwineYoung.cshtml" />
+    <Content Include="Views\Breeding\SwineYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\SwineYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\SwineYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\SwineCharges.cshtml" />
+    <Content Include="Views\Breeding\SwineChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\SwineChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\SwineChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\SwineProfits.cshtml" />
+    <Content Include="Views\Breeding\SwineProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\SwineRemindings.cshtml" />
+    <Content Include="Views\Breeding\SwineRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\SwineRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\SwineRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatComing.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatComingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatComingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatComingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatYoung.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatCharges.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatRemindings.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemeatRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkComing.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkComingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkComingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkComingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkYoung.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkCharges.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkRemindings.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemilkRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedYoung.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedYoungCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedYoungEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedYoungDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedComing.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedComingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedComingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedComingDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedCharges.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedProfits.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedRemindings.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\CattlemixedRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogComing.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogComingCreate.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogComingEdit.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogComingDelete.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogCharges.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogProfits.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogRemindings.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\PinscherdogRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogComing.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogComingCreate.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogComingEdit.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogComingDelete.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogCharges.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogProfits.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogRemindings.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\HoundsdogRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\СopsdogComing.cshtml" />
+    <Content Include="Views\Breeding\СopsdogComingCreate.cshtml" />
+    <Content Include="Views\Breeding\СopsdogComingEdit.cshtml" />
+    <Content Include="Views\Breeding\СopsdogComingDelete.cshtml" />
+    <Content Include="Views\Breeding\СopsdogCharges.cshtml" />
+    <Content Include="Views\Breeding\СopsdogChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\СopsdogChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\СopsdogChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\СopsdogProfits.cshtml" />
+    <Content Include="Views\Breeding\СopsdogProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\СopsdogRemindings.cshtml" />
+    <Content Include="Views\Breeding\СopsdogRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\СopsdogRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\СopsdogRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogComing.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogComingCreate.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogComingEdit.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogComingDelete.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogCharges.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogProfits.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogRemindings.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\BorzoidogRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinComing.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinComingCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinComingEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinComingDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinCharges.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinProfits.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinRemindings.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitSkinRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatComing.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatComingCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatComingEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatComingDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatCharges.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatProfits.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatRemindings.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\RabbitMeatRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\HenMeatComing.cshtml" />
+    <Content Include="Views\Breeding\HenMeatComingCreate.cshtml" />
+    <Content Include="Views\Breeding\HenMeatComingEdit.cshtml" />
+    <Content Include="Views\Breeding\HenMeatComingDelete.cshtml" />
+    <Content Include="Views\Breeding\HenMeatCharges.cshtml" />
+    <Content Include="Views\Breeding\HenMeatChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\HenMeatChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\HenMeatChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\HenMeatDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\HenMeatDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\HenMeatDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HenMeatDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\HenMeatProfits.cshtml" />
+    <Content Include="Views\Breeding\HenMeatProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HenMeatRemindings.cshtml" />
+    <Content Include="Views\Breeding\HenMeatRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\HenMeatRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\HenMeatRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\HenEggComing.cshtml" />
+    <Content Include="Views\Breeding\HenEggComingCreate.cshtml" />
+    <Content Include="Views\Breeding\HenEggComingEdit.cshtml" />
+    <Content Include="Views\Breeding\HenEggComingDelete.cshtml" />
+    <Content Include="Views\Breeding\HenEggCharges.cshtml" />
+    <Content Include="Views\Breeding\HenEggChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\HenEggChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\HenEggChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\HenEggDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\HenEggDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\HenEggDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HenEggDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\HenEggProfits.cshtml" />
+    <Content Include="Views\Breeding\HenEggProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\HenEggRemindings.cshtml" />
+    <Content Include="Views\Breeding\HenEggRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\HenEggRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\HenEggRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\GooseComing.cshtml" />
+    <Content Include="Views\Breeding\GooseComingCreate.cshtml" />
+    <Content Include="Views\Breeding\GooseComingEdit.cshtml" />
+    <Content Include="Views\Breeding\GooseComingDelete.cshtml" />
+    <Content Include="Views\Breeding\GooseCharges.cshtml" />
+    <Content Include="Views\Breeding\GooseChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\GooseChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\GooseChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\GooseDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\GooseDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\GooseDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\GooseDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\GooseProfits.cshtml" />
+    <Content Include="Views\Breeding\GooseProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\GooseRemindings.cshtml" />
+    <Content Include="Views\Breeding\GooseRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\GooseRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\GooseRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\QuailComing.cshtml" />
+    <Content Include="Views\Breeding\QuailComingCreate.cshtml" />
+    <Content Include="Views\Breeding\QuailComingEdit.cshtml" />
+    <Content Include="Views\Breeding\QuailComingDelete.cshtml" />
+    <Content Include="Views\Breeding\QuailCharges.cshtml" />
+    <Content Include="Views\Breeding\QuailChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\QuailChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\QuailChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\QuailDailyProfits.cshtml" />
+    <Content Include="Views\Breeding\QuailDailyProfitCreate.cshtml" />
+    <Content Include="Views\Breeding\QuailDailyProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\QuailDailyProfitDelete.cshtml" />
+    <Content Include="Views\Breeding\QuailProfits.cshtml" />
+    <Content Include="Views\Breeding\QuailProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\QuailRemindings.cshtml" />
+    <Content Include="Views\Breeding\QuailRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\QuailRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\QuailRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishComing.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishComingCreate.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishComingEdit.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishComingDelete.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishCharges.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishProfits.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishRemindings.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\TeplovyeFishRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishComing.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishComingCreate.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishComingEdit.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishComingDelete.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishCharges.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishProfits.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishProfitEdit.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishRemindings.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\СoldwaterFishRemindingDelete.cshtml" />
+    <Content Include="Views\Breeding\BeeComing.cshtml" />
+    <Content Include="Views\Breeding\BeeComingCreate.cshtml" />
+    <Content Include="Views\Breeding\BeeComingEdit.cshtml" />
+    <Content Include="Views\Breeding\BeeComingDelete.cshtml" />
+    <Content Include="Views\Breeding\BeeCharges.cshtml" />
+    <Content Include="Views\Breeding\BeeChargesCreate.cshtml" />
+    <Content Include="Views\Breeding\BeeChargesEdit.cshtml" />
+    <Content Include="Views\Breeding\BeeChargesDelete.cshtml" />
+    <Content Include="Views\Breeding\BeeHoneys.cshtml" />
+    <Content Include="Views\Breeding\BeeHoneyCreate.cshtml" />
+    <Content Include="Views\Breeding\BeeHoneyEdit.cshtml" />
+    <Content Include="Views\Breeding\BeeHoneyDelete.cshtml" />
+    <Content Include="Views\Breeding\BeeRemindings.cshtml" />
+    <Content Include="Views\Breeding\BeeRemindingCreate.cshtml" />
+    <Content Include="Views\Breeding\BeeRemindingEdit.cshtml" />
+    <Content Include="Views\Breeding\BeeRemindingDelete.cshtml" />
+    <Content Include="Views\UserSimple\Admin.cshtml" />
+    <Content Include="Views\UserSimple\Users.cshtml" />
+    <Content Include="Views\UserSimple\UserEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Storefiles\" />
+    <Folder Include="StoreImages\Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{1b34a2f7-0c27-4cc3-9b4d-0b7bab1fce91}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{445e4f49-76ec-430d-a694-5eaa2a90373b}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servises\Servises.csproj">
+      <Project>{f839feed-371a-4f96-bd5e-a49ff38d3035}</Project>
+      <Name>Servises</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6916</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2351/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,21 @@
+﻿@model Domain.Entities.Growing.GrowingCharges
+
+@{
+    ViewBag.Title = "Хлебные культуры - Удаление затрат";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Растениеводство.</h4>
+<h3 class="academy-field">Хлебные культуры. Затраты.</h3>
+<h3>Вы уверены, что хотите это удалить  &nbsp; @Model.Name  &nbsp; @Model.TotalCost ?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary"/>
+        </div>
+        <br/>
+        @Html.ActionLink("Назад в Хлебные культуры. Затраты", "BreadCharges")
+    }
+
+</div>

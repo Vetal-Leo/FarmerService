@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="6fd740da-782b-42e3-bd2e-7a9e98967a10"
+  name="FarmerModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="4ea0bf03-6484-4d01-9ba3-cedb433f837d"
+        name="Незарегистрированный пользователь"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="1e3e37bf-1e8d-4aca-8dda-c329c888f1d9"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="7890b35f-879d-4a02-920a-7c15fc2edd49"
+              LastKnownName="Зарегистрированный пользователь"
+              LastKnownLocation="FarmerModelingProject.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="d9fc8859-e670-4ecc-b348-81702fa05995"
+            isDerived="false"
+            sourceEndRoleName="Незарегистрированный пользователь"
+            targetEndRoleName="Зарегистрироваться"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3852e85a-cb28-44c1-86ed-425862dca5a8"
+              LastKnownName="Зарегистрироваться"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="de3b46b3-9c87-4b42-81aa-51d9e66e5a0d"
+                  name="Незарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4528cb2f-6984-4d38-b38d-326de755daeb"
+                  name="Зарегистрироваться"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="86728a45-1b08-48ec-8502-5312155a9a94"
+            isDerived="false"
+            sourceEndRoleName="Незарегистрированный пользователь"
+            targetEndRoleName="Просматривать главную страницу"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="542bdcfd-4ea9-412d-b7e4-9b3d380be9c1"
+              LastKnownName="Просматривать главную страницу"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="43848a7a-c822-4755-80cd-f554cb880f4c"
+                  name="Незарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c2496561-34d3-489f-ac38-4acbdd4e752a"
+                  name="Просматривать главную страницу"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3852e85a-cb28-44c1-86ed-425862dca5a8"
+        name="Зарегистрироваться"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="542bdcfd-4ea9-412d-b7e4-9b3d380be9c1"
+        name="Просматривать главную страницу"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="7890b35f-879d-4a02-920a-7c15fc2edd49"
+        name="Зарегистрированный пользователь"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="e0d34ac8-ab43-465f-9727-92a972e2e6a0"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="8455d5be-6f20-4394-a33a-7365b868da77"
+              LastKnownName="Администратор"
+              LastKnownLocation="FarmerModelingProject.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="ae0a5ef5-5db2-44ff-8cbd-401c48212ac1"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Войти в свой аккаунт"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a91406e0-19e5-4e4a-b2c4-10963e073c5c"
+              LastKnownName="Войти в свой аккаунт"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4be80b99-c0ae-4d74-8d29-3ec2e0bc3111"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6df3155a-b678-4fb6-ae5e-7a1f531204a8"
+                  name="Войти в свой аккаунт"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="765416f4-570c-4717-bc6b-06d2a66d413e"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Войти в личный кабинет, заполнить  и отредактировать данные о себе"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="eba9a2be-64f7-4503-9284-148153dc5ea1"
+              LastKnownName="Войти в Личный кабинет, заполнить  и отредактировать данные о себе"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="241aca52-2a4c-45b3-8d4a-a5095132efa1"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a712a690-cb1a-48db-87dc-bc67ae2ad872"
+                  name="Войти в личный кабинет, заполнить  и отредактировать данные о себе"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c638355b-fa5e-4b37-beb3-71a9b6b0cb70"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Загружать и редактировать  фото , загружать PDF документы "
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="590528d4-e218-443b-a19f-f36ba1f73feb"
+              LastKnownName="Загружать и редактировать  фото , загружать PDF документы "
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="48b3b1e2-9895-4365-8809-9a4b198d2211"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1c47741-bb95-4dd2-9ad4-9c6f17ea19b6"
+                  name="Загружать и редактировать  фото , загружать PDF документы "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a9fb82a5-d15d-4d2f-95cc-9e33949aaff6"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Просматривать любую страницу сайта"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="bbdfb4fb-8a7f-4857-88d0-dff1bdec4bc6"
+              LastKnownName="Просматривать любую страницу сайта"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="23c43b00-0daa-4b05-9ce0-5b4847d2878f"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1a18b28a-b75e-4f8b-9657-dfc8a8bb540e"
+                  name="Просматривать любую страницу сайта"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="54fd5fbd-1132-42a2-b6f2-909e26f8a236"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Добавлять,редактировать и удалять данные в любых разделах сайта"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f3c78748-7bb7-4a31-9a14-eab0d0eec048"
+              LastKnownName="Добавлять,редактировать и удалять данные в разделе Растениеводство"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b2ee4d9-3266-40f7-85f0-e4447e91910f"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ccb1c683-b5e2-4e8d-9afa-04d0b02e586a"
+                  name="Добавлять,редактировать и удалять данные в любых разделах сайта"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f3a20cb9-b8f1-444c-b650-c39d49a53d3d"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Получать сообщения от системы"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a6061f1f-ccae-47e3-8ed7-115ae9be279b"
+              LastKnownName="Получать сообщения от системы"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6700def6-65d1-44e6-828f-d47ea4ddf3d5"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91e90705-c17a-4da1-bb0f-9678c7163b66"
+                  name="Получать сообщения от системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b49556b2-06e4-43d9-929b-7ca8f8eb3995"
+            isDerived="false"
+            sourceEndRoleName="Зарегистрированный пользователь"
+            targetEndRoleName="Добавлять,редактировать и удалять данные в разделе Животноводство"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1fac8b83-1d28-4425-96e4-a2b84eb3cd94"
+              LastKnownName="Добавлять,редактировать и удалять данные в разделе Животноводство"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2b1ad2eb-bfee-4ddb-8b16-e250a819e052"
+                  name="Зарегистрированный пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4e12a61e-b156-4775-b122-2f39679a29c1"
+                  name="Добавлять,редактировать и удалять данные в разделе Животноводство"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a91406e0-19e5-4e4a-b2c4-10963e073c5c"
+        name="Войти в свой аккаунт"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="eba9a2be-64f7-4503-9284-148153dc5ea1"
+        name="Войти в Личный кабинет, заполнить  и отредактировать данные о себе"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="590528d4-e218-443b-a19f-f36ba1f73feb"
+        name="Загружать и редактировать  фото , загружать PDF документы "
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8455d5be-6f20-4394-a33a-7365b868da77"
+        name="Администратор"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5eae5e85-7401-4101-a0a5-c5ee026ab825"
+            isDerived="false"
+            sourceEndRoleName="Администратор"
+            targetEndRoleName="Забанить любого пользователя"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="753289e4-2145-43d7-99de-cb38f247f08f"
+              LastKnownName="Забанить любого пользователя"
+              LastKnownLocation="FarmerModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fe9f11d6-3a30-4c7d-b70f-264438a9ff16"
+                  name="Администратор"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8493dc50-7c7d-4d7d-9379-d6bb5ecce79a"
+                  name="Забанить любого пользователя"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="753289e4-2145-43d7-99de-cb38f247f08f"
+        name="Забанить любого пользователя"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bbdfb4fb-8a7f-4857-88d0-dff1bdec4bc6"
+        name="Просматривать любую страницу сайта"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f3c78748-7bb7-4a31-9a14-eab0d0eec048"
+        name="Добавлять,редактировать и удалять данные в разделе Растениеводство"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a6061f1f-ccae-47e3-8ed7-115ae9be279b"
+        name="Получать сообщения от системы"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1fac8b83-1d28-4425-96e4-a2b84eb3cd94"
+        name="Добавлять,редактировать и удалять данные в разделе Животноводство"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Domain.Entities.Breeding.BreedingCharges>
+
+@{
+    ViewBag.Title = "Рыбоводство(Теплолюбивые рыбы) - Затраты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h1 class="academy-bee">Рыбоводство(Теплолюбивые рыбы)</h1>
+<br />
+<p class="shift">
+    <a href="/Breeding/TeplovyeFishComing">Приход</a> &#10132; Затраты &#10132;<a href="/Breeding/TeplovyeFishProfits">Уход</a> &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="/Breeding/TeplovyeFishRemindings">Напоминания</a>
+</p>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SumCost)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Смотреть", null, new { id = item.Id }, new { @class = "btn btn-success btn-xs", href = item.Document, target = "_blank", title = "Предварительно загрузите PDF - файл!" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SumCost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "TeplovyeFishChargesEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "TeplovyeFishChargesDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+    <a class="btn btn-primary btn-xs inlet" href="/Breeding/TeplovyeFishChargesCreate">Добавить</a>
+</div>
+
+
+

@@ -1,0 +1,21 @@
+﻿@model Domain.Entities.Breeding.BreedingComings
+
+@{
+    ViewBag.Title = "Скотоводство(Мясо-молочные породы) - Удаление животных.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-bee">Скотоводство(Мясо-молочные породы). Приход.</h3>
+<h3>Вы уверены, что хотите это удалить  &nbsp; @Model.Name , @Model.Amount голов ?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+        <br />
+        @Html.ActionLink("Назад в Скотоводство(Мясо-молочные породы). Приход", "CattlemixedComing")
+    }
+
+</div>

@@ -1,0 +1,24 @@
+﻿@model Domain.Entities.Breeding.BreedingDailyProfit
+
+@{
+    ViewBag.Title = "Птицеводство(Перепела,Фазаны,Страусы) - Удаление ежедневной прибыли.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-camel">Птицеводство(Перепела,Фазаны,Страусы). Ежедневная прибыль.</h3>
+<h3>Вы уверены, что хотите это удалить  &nbsp; @Model.Name  &nbsp;  @Model.Amount  &nbsp; @Model.MassType ?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+        <br />
+        @Html.ActionLink("Назад в Птицеводство(Перепела,Фазаны,Страусы). Ежедневная прибыль.", "QuailDailyProfits")
+    }
+
+</div>
+
+
+

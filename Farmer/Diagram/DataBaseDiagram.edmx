@@ -1,0 +1,2902 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApplicationUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+          <Property Name="FarmerUser_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="ApplicationUserLogins">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar(max)" />
+          <Property Name="ProviderKey" Type="nvarchar(max)" />
+          <Property Name="FarmerUser_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="ApplicationUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="FarmerUser_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="BeeComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceiptDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BeeHoneys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="AnimalName" Type="nvarchar(max)" />
+          <Property Name="HoneyType" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingCharges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationDate" Type="datetime" />
+          <Property Name="AnimalName" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SumCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceiptDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Mass" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingCultures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingDailyProfits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="AnimalName" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="СlearCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingProfits">
+          <Key>
+            <PropertyRef Name="BreedingId" />
+          </Key>
+          <Property Name="BreedingId" Type="int" Nullable="false" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="Motive" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingReminders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AnimalName" Type="nvarchar(max)" />
+          <Property Name="Text" Type="nvarchar(max)" />
+          <Property Name="RemindDate" Type="datetime" />
+          <Property Name="RemindDays" Type="int" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreedingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FishComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceiptDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FishProfits">
+          <Key>
+            <PropertyRef Name="FishId" />
+          </Key>
+          <Property Name="FishId" Type="int" Nullable="false" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="Motive" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingCharges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationDate" Type="datetime" />
+          <Property Name="PlantName" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SumCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingCultures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingFieldComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LandingDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingFieldProfits">
+          <Key>
+            <PropertyRef Name="GrowingFieldId" />
+          </Key>
+          <Property Name="GrowingFieldId" Type="int" Nullable="false" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="Remind" Type="bit" Nullable="false" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="ClearCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingFruitComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LandingDate" Type="datetime" />
+          <Property Name="FloweringDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="WasastPlants" Type="int" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingFruitProfits">
+          <Key>
+            <PropertyRef Name="GrowingFruitId" />
+          </Key>
+          <Property Name="GrowingFruitId" Type="int" Nullable="false" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="Remind" Type="bit" Nullable="false" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="ClearCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="GrowingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HoneyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Avatar" Type="nvarchar(max)" />
+          <Property Name="Growing" Type="nvarchar(max)" />
+          <Property Name="Breeding" Type="nvarchar(max)" />
+          <Property Name="Technique" Type="nvarchar(max)" />
+          <Property Name="Product" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="64" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="64" />
+          <Property Name="Birthday" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Reminding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="User_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="Remind" Type="bit" Nullable="false" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="YoungBreedings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceiptDate" Type="datetime" />
+          <Property Name="CultureType" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MassType" Type="nvarchar(max)" />
+          <Property Name="Mass" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CurrencyType" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Document" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="BreedingType_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserClaims" Type="Self.ApplicationUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserClaims">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserLogins" Type="Self.ApplicationUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserLogins">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ApplicationUserRoles" Type="Self.ApplicationUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserRoles" Type="Self.ApplicationUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserRoles">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeComings" Type="Self.BeeComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeComings" Type="Self.BeeComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeHoneys" Type="Self.BeeHoneys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeHoneys">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeHoneys_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BeeHoneys" Type="Self.BeeHoneys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeHoneys">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCharges" Type="Self.BreedingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCharges">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCharges_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCharges" Type="Self.BreedingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCharges">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCultures" Type="Self.BreedingCultures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCultures">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingDailyProfits" Type="Self.BreedingDailyProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingDailyProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingDailyProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingDailyProfits" Type="Self.BreedingDailyProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingDailyProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId">
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="1" />
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="BreedingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingReminders" Type="Self.BreedingReminders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingReminders">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingReminders_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingReminders" Type="Self.BreedingReminders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingReminders">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_FishComings_FishId">
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="1" />
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FishComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="FishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCharges" Type="Self.GrowingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCharges">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCharges_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCharges" Type="Self.GrowingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCharges">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCultures" Type="Self.GrowingCultures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCultures">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldComings">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId">
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="1" />
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingFieldComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="GrowingFieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitComings">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId">
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="1" />
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingFruitComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="GrowingFruitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Photo_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Profiles_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Profiles" Type="Self.Profiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Reminding_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Reminding" Type="Self.Reminding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reminding">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="YoungBreedings" Type="Self.YoungBreedings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="YoungBreedings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_YoungBreedings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="YoungBreedings" Type="Self.YoungBreedings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="YoungBreedings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplicationUserClaims" EntityType="Self.ApplicationUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplicationUserLogins" EntityType="Self.ApplicationUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplicationUserRoles" EntityType="Self.ApplicationUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeeComings" EntityType="Self.BeeComings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeeHoneys" EntityType="Self.BeeHoneys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingCharges" EntityType="Self.BreedingCharges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingComings" EntityType="Self.BreedingComings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingCultures" EntityType="Self.BreedingCultures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingDailyProfits" EntityType="Self.BreedingDailyProfits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingProfits" EntityType="Self.BreedingProfits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingReminders" EntityType="Self.BreedingReminders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreedingType" EntityType="Self.BreedingType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FishComings" EntityType="Self.FishComings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FishProfits" EntityType="Self.FishProfits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingCharges" EntityType="Self.GrowingCharges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingCultures" EntityType="Self.GrowingCultures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingFieldComings" EntityType="Self.GrowingFieldComings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingFieldProfits" EntityType="Self.GrowingFieldProfits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingFruitComings" EntityType="Self.GrowingFruitComings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingFruitProfits" EntityType="Self.GrowingFruitProfits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowingType" EntityType="Self.GrowingType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoneyType" EntityType="Self.HoneyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reminding" EntityType="Self.Reminding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YoungBreedings" EntityType="Self.YoungBreedings" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserClaims" EntitySet="ApplicationUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserLogins" EntitySet="ApplicationUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId" Association="Self.FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="ApplicationUserRoles" EntitySet="ApplicationUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserRoles" EntitySet="ApplicationUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BeeComings" EntitySet="BeeComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeComings_dbo_Users_User_Id" Association="Self.FK_dbo_BeeComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BeeComings" EntitySet="BeeComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BeeHoneys" EntitySet="BeeHoneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeHoneys_dbo_Users_User_Id" Association="Self.FK_dbo_BeeHoneys_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BeeHoneys" EntitySet="BeeHoneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingCharges" EntitySet="BreedingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCharges_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingCharges_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingCharges" EntitySet="BreedingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingComings_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingCultures" EntitySet="BreedingCultures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingDailyProfits" EntitySet="BreedingDailyProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingDailyProfits_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingDailyProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingDailyProfits" EntitySet="BreedingDailyProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId" Association="Self.FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId">
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingReminders" EntitySet="BreedingReminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingReminders_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingReminders_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingReminders" EntitySet="BreedingReminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="FishComings" EntitySet="FishComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishComings_dbo_Users_User_Id" Association="Self.FK_dbo_FishComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FishComings" EntitySet="FishComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_FishComings_FishId" Association="Self.FK_dbo_FishProfits_dbo_FishComings_FishId">
+            <End Role="FishComings" EntitySet="FishComings" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_Users_User_Id" Association="Self.FK_dbo_FishProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingCharges" EntitySet="GrowingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCharges_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingCharges_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingCharges" EntitySet="GrowingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingCultures" EntitySet="GrowingCultures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldComings_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFieldComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId" Association="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId">
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFieldProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitComings_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFruitComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId" Association="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId">
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFruitProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Photo_dbo_Users_UserId" Association="Self.FK_dbo_Photo_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Photo" EntitySet="Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Profiles_dbo_Users_UserId" Association="Self.FK_dbo_Profiles_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Reminding_dbo_Users_User_Id" Association="Self.FK_dbo_Reminding_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reminding" EntitySet="Reminding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="YoungBreedings" EntitySet="YoungBreedings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_YoungBreedings_dbo_Users_User_Id" Association="Self.FK_dbo_YoungBreedings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="YoungBreedings" EntitySet="YoungBreedings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApplicationUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FarmerUser_Id" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id" FromRole="ApplicationUserClaims" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ApplicationUserLogins">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginProvider" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FarmerUser_Id" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id" FromRole="ApplicationUserLogins" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ApplicationUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="FarmerUser_Id" Type="Int32" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId" FromRole="ApplicationUserRoles" ToRole="Roles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id" FromRole="ApplicationUserRoles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BeeComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id" FromRole="BeeComings" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BeeComings_dbo_Users_User_Id" FromRole="BeeComings" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BeeHoneys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="AnimalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HoneyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id" FromRole="BeeHoneys" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BeeHoneys_dbo_Users_User_Id" FromRole="BeeHoneys" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BreedingCharges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationDate" Type="DateTime" Precision="3" />
+          <Property Name="AnimalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SumCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id" FromRole="BreedingCharges" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BreedingCharges_dbo_Users_User_Id" FromRole="BreedingCharges" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BreedingComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mass" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id" FromRole="BreedingComings" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BreedingComings_dbo_Users_User_Id" FromRole="BreedingComings" ToRole="Users" />
+          <NavigationProperty Name="BreedingProfits" Relationship="Self.FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId" FromRole="BreedingComings" ToRole="BreedingProfits" />
+        </EntityType>
+        <EntityType Name="BreedingCultures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id" FromRole="BreedingCultures" ToRole="BreedingType" />
+        </EntityType>
+        <EntityType Name="BreedingDailyProfits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="AnimalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="СlearCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id" FromRole="BreedingDailyProfits" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BreedingDailyProfits_dbo_Users_User_Id" FromRole="BreedingDailyProfits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BreedingProfits">
+          <Key>
+            <PropertyRef Name="BreedingId" />
+          </Key>
+          <Property Name="BreedingId" Type="Int32" Nullable="false" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="Motive" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingComings" Relationship="Self.FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId" FromRole="BreedingProfits" ToRole="BreedingComings" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id" FromRole="BreedingProfits" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BreedingProfits_dbo_Users_User_Id" FromRole="BreedingProfits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BreedingReminders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AnimalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RemindDate" Type="DateTime" Precision="3" />
+          <Property Name="RemindDays" Type="Int32" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id" FromRole="BreedingReminders" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_BreedingReminders_dbo_Users_User_Id" FromRole="BreedingReminders" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="BreedingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BeeComings" Relationship="Self.FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BeeComings" />
+          <NavigationProperty Name="BeeHoneys" Relationship="Self.FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BeeHoneys" />
+          <NavigationProperty Name="BreedingCharges" Relationship="Self.FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingCharges" />
+          <NavigationProperty Name="BreedingComings" Relationship="Self.FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingComings" />
+          <NavigationProperty Name="BreedingCultures" Relationship="Self.FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingCultures" />
+          <NavigationProperty Name="BreedingDailyProfits" Relationship="Self.FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingDailyProfits" />
+          <NavigationProperty Name="BreedingProfits" Relationship="Self.FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingProfits" />
+          <NavigationProperty Name="BreedingReminders" Relationship="Self.FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="BreedingReminders" />
+          <NavigationProperty Name="FishComings" Relationship="Self.FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="FishComings" />
+          <NavigationProperty Name="FishProfits" Relationship="Self.FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="FishProfits" />
+          <NavigationProperty Name="YoungBreedings" Relationship="Self.FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id" FromRole="BreedingType" ToRole="YoungBreedings" />
+        </EntityType>
+        <EntityType Name="FishComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id" FromRole="FishComings" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_FishComings_dbo_Users_User_Id" FromRole="FishComings" ToRole="Users" />
+          <NavigationProperty Name="FishProfits" Relationship="Self.FK_dbo_FishProfits_dbo_FishComings_FishId" FromRole="FishComings" ToRole="FishProfits" />
+        </EntityType>
+        <EntityType Name="FishProfits">
+          <Key>
+            <PropertyRef Name="FishId" />
+          </Key>
+          <Property Name="FishId" Type="Int32" Nullable="false" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="Motive" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id" FromRole="FishProfits" ToRole="BreedingType" />
+          <NavigationProperty Name="FishComings" Relationship="Self.FK_dbo_FishProfits_dbo_FishComings_FishId" FromRole="FishProfits" ToRole="FishComings" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_FishProfits_dbo_Users_User_Id" FromRole="FishProfits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="GrowingCharges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationDate" Type="DateTime" Precision="3" />
+          <Property Name="PlantName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SumCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id" FromRole="GrowingCharges" ToRole="GrowingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_GrowingCharges_dbo_Users_User_Id" FromRole="GrowingCharges" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="GrowingCultures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id" FromRole="GrowingCultures" ToRole="GrowingType" />
+        </EntityType>
+        <EntityType Name="GrowingFieldComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LandingDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id" FromRole="GrowingFieldComings" ToRole="GrowingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_GrowingFieldComings_dbo_Users_User_Id" FromRole="GrowingFieldComings" ToRole="Users" />
+          <NavigationProperty Name="GrowingFieldProfits" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId" FromRole="GrowingFieldComings" ToRole="GrowingFieldProfits" />
+        </EntityType>
+        <EntityType Name="GrowingFieldProfits">
+          <Key>
+            <PropertyRef Name="GrowingFieldId" />
+          </Key>
+          <Property Name="GrowingFieldId" Type="Int32" Nullable="false" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="Remind" Type="Boolean" Nullable="false" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClearCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingFieldComings" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId" FromRole="GrowingFieldProfits" ToRole="GrowingFieldComings" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id" FromRole="GrowingFieldProfits" ToRole="GrowingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_Users_User_Id" FromRole="GrowingFieldProfits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="GrowingFruitComings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LandingDate" Type="DateTime" Precision="3" />
+          <Property Name="FloweringDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WasastPlants" Type="Int32" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id" FromRole="GrowingFruitComings" ToRole="GrowingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_GrowingFruitComings_dbo_Users_User_Id" FromRole="GrowingFruitComings" ToRole="Users" />
+          <NavigationProperty Name="GrowingFruitProfits" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId" FromRole="GrowingFruitComings" ToRole="GrowingFruitProfits" />
+        </EntityType>
+        <EntityType Name="GrowingFruitProfits">
+          <Key>
+            <PropertyRef Name="GrowingFruitId" />
+          </Key>
+          <Property Name="GrowingFruitId" Type="Int32" Nullable="false" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="Remind" Type="Boolean" Nullable="false" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClearCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProfitCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="GrowingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GrowingFruitComings" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId" FromRole="GrowingFruitProfits" ToRole="GrowingFruitComings" />
+          <NavigationProperty Name="GrowingType" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id" FromRole="GrowingFruitProfits" ToRole="GrowingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_Users_User_Id" FromRole="GrowingFruitProfits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="GrowingType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GrowingCharges" Relationship="Self.FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingCharges" />
+          <NavigationProperty Name="GrowingCultures" Relationship="Self.FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingCultures" />
+          <NavigationProperty Name="GrowingFieldComings" Relationship="Self.FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingFieldComings" />
+          <NavigationProperty Name="GrowingFieldProfits" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingFieldProfits" />
+          <NavigationProperty Name="GrowingFruitComings" Relationship="Self.FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingFruitComings" />
+          <NavigationProperty Name="GrowingFruitProfits" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id" FromRole="GrowingType" ToRole="GrowingFruitProfits" />
+        </EntityType>
+        <EntityType Name="HoneyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Growing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Breeding" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Technique" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Photo_dbo_Users_UserId" FromRole="Photo" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Profiles_dbo_Users_UserId" FromRole="Profiles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Reminding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="User_Id" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Reminding_dbo_Users_User_Id" FromRole="Reminding" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ApplicationUserRoles" Relationship="Self.FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId" FromRole="Roles" ToRole="ApplicationUserRoles" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remind" Type="Boolean" Nullable="false" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ApplicationUserClaims" Relationship="Self.FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id" FromRole="Users" ToRole="ApplicationUserClaims" />
+          <NavigationProperty Name="ApplicationUserLogins" Relationship="Self.FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id" FromRole="Users" ToRole="ApplicationUserLogins" />
+          <NavigationProperty Name="ApplicationUserRoles" Relationship="Self.FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id" FromRole="Users" ToRole="ApplicationUserRoles" />
+          <NavigationProperty Name="BeeComings" Relationship="Self.FK_dbo_BeeComings_dbo_Users_User_Id" FromRole="Users" ToRole="BeeComings" />
+          <NavigationProperty Name="BeeHoneys" Relationship="Self.FK_dbo_BeeHoneys_dbo_Users_User_Id" FromRole="Users" ToRole="BeeHoneys" />
+          <NavigationProperty Name="BreedingCharges" Relationship="Self.FK_dbo_BreedingCharges_dbo_Users_User_Id" FromRole="Users" ToRole="BreedingCharges" />
+          <NavigationProperty Name="BreedingComings" Relationship="Self.FK_dbo_BreedingComings_dbo_Users_User_Id" FromRole="Users" ToRole="BreedingComings" />
+          <NavigationProperty Name="BreedingDailyProfits" Relationship="Self.FK_dbo_BreedingDailyProfits_dbo_Users_User_Id" FromRole="Users" ToRole="BreedingDailyProfits" />
+          <NavigationProperty Name="BreedingProfits" Relationship="Self.FK_dbo_BreedingProfits_dbo_Users_User_Id" FromRole="Users" ToRole="BreedingProfits" />
+          <NavigationProperty Name="BreedingReminders" Relationship="Self.FK_dbo_BreedingReminders_dbo_Users_User_Id" FromRole="Users" ToRole="BreedingReminders" />
+          <NavigationProperty Name="FishComings" Relationship="Self.FK_dbo_FishComings_dbo_Users_User_Id" FromRole="Users" ToRole="FishComings" />
+          <NavigationProperty Name="FishProfits" Relationship="Self.FK_dbo_FishProfits_dbo_Users_User_Id" FromRole="Users" ToRole="FishProfits" />
+          <NavigationProperty Name="GrowingCharges" Relationship="Self.FK_dbo_GrowingCharges_dbo_Users_User_Id" FromRole="Users" ToRole="GrowingCharges" />
+          <NavigationProperty Name="GrowingFieldComings" Relationship="Self.FK_dbo_GrowingFieldComings_dbo_Users_User_Id" FromRole="Users" ToRole="GrowingFieldComings" />
+          <NavigationProperty Name="GrowingFieldProfits" Relationship="Self.FK_dbo_GrowingFieldProfits_dbo_Users_User_Id" FromRole="Users" ToRole="GrowingFieldProfits" />
+          <NavigationProperty Name="GrowingFruitComings" Relationship="Self.FK_dbo_GrowingFruitComings_dbo_Users_User_Id" FromRole="Users" ToRole="GrowingFruitComings" />
+          <NavigationProperty Name="GrowingFruitProfits" Relationship="Self.FK_dbo_GrowingFruitProfits_dbo_Users_User_Id" FromRole="Users" ToRole="GrowingFruitProfits" />
+          <NavigationProperty Name="Photo" Relationship="Self.FK_dbo_Photo_dbo_Users_UserId" FromRole="Users" ToRole="Photo" />
+          <NavigationProperty Name="Profiles" Relationship="Self.FK_dbo_Profiles_dbo_Users_UserId" FromRole="Users" ToRole="Profiles" />
+          <NavigationProperty Name="Reminding" Relationship="Self.FK_dbo_Reminding_dbo_Users_User_Id" FromRole="Users" ToRole="Reminding" />
+          <NavigationProperty Name="YoungBreedings" Relationship="Self.FK_dbo_YoungBreedings_dbo_Users_User_Id" FromRole="Users" ToRole="YoungBreedings" />
+        </EntityType>
+        <EntityType Name="YoungBreedings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+          <Property Name="CultureType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MassType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mass" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CurrencyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Document" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="BreedingType_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BreedingType" Relationship="Self.FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id" FromRole="YoungBreedings" ToRole="BreedingType" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_YoungBreedings_dbo_Users_User_Id" FromRole="YoungBreedings" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserClaims" Type="Self.ApplicationUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserClaims">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserLogins" Type="Self.ApplicationUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserLogins">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ApplicationUserRoles" Type="Self.ApplicationUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ApplicationUserRoles" Type="Self.ApplicationUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ApplicationUserRoles">
+              <PropertyRef Name="FarmerUser_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeComings" Type="Self.BeeComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeComings" Type="Self.BeeComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BeeHoneys" Type="Self.BeeHoneys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeHoneys">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BeeHoneys_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BeeHoneys" Type="Self.BeeHoneys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BeeHoneys">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCharges" Type="Self.BreedingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCharges">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCharges_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCharges" Type="Self.BreedingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCharges">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId">
+          <End Role="BreedingComings" Type="Self.BreedingComings" Multiplicity="1" />
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="BreedingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingCultures" Type="Self.BreedingCultures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingCultures">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingDailyProfits" Type="Self.BreedingDailyProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingDailyProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingDailyProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingDailyProfits" Type="Self.BreedingDailyProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingDailyProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingProfits" Type="Self.BreedingProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BreedingReminders" Type="Self.BreedingReminders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingReminders">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_BreedingReminders_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BreedingReminders" Type="Self.BreedingReminders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BreedingReminders">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishComings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id">
+          <End Role="BreedingType" Type="Self.BreedingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="YoungBreedings" Type="Self.YoungBreedings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BreedingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="YoungBreedings">
+              <PropertyRef Name="BreedingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_FishComings_FishId">
+          <End Role="FishComings" Type="Self.FishComings" Multiplicity="1" />
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FishComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="FishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FishProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="FishProfits" Type="Self.FishProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FishProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCharges" Type="Self.GrowingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCharges">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCharges_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCharges" Type="Self.GrowingCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCharges">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingCultures" Type="Self.GrowingCultures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingCultures">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldComings">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId">
+          <End Role="GrowingFieldComings" Type="Self.GrowingFieldComings" Multiplicity="1" />
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingFieldComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="GrowingFieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFieldProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GrowingFieldProfits" Type="Self.GrowingFieldProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFieldProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitComings">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitComings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitComings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId">
+          <End Role="GrowingFruitComings" Type="Self.GrowingFruitComings" Multiplicity="1" />
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingFruitComings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="GrowingFruitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id">
+          <End Role="GrowingType" Type="Self.GrowingType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrowingType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="GrowingType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GrowingFruitProfits_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GrowingFruitProfits" Type="Self.GrowingFruitProfits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GrowingFruitProfits">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Photo_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Profiles_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Profiles" Type="Self.Profiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Reminding_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Reminding" Type="Self.Reminding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reminding">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_YoungBreedings_dbo_Users_User_Id">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="YoungBreedings" Type="Self.YoungBreedings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="YoungBreedings">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="ApplicationUserClaims" EntityType="Self.ApplicationUserClaims" />
+          <EntitySet Name="ApplicationUserLogins" EntityType="Self.ApplicationUserLogins" />
+          <EntitySet Name="ApplicationUserRoles" EntityType="Self.ApplicationUserRoles" />
+          <EntitySet Name="BeeComings" EntityType="Self.BeeComings" />
+          <EntitySet Name="BeeHoneys" EntityType="Self.BeeHoneys" />
+          <EntitySet Name="BreedingCharges" EntityType="Self.BreedingCharges" />
+          <EntitySet Name="BreedingComings" EntityType="Self.BreedingComings" />
+          <EntitySet Name="BreedingCultures" EntityType="Self.BreedingCultures" />
+          <EntitySet Name="BreedingDailyProfits" EntityType="Self.BreedingDailyProfits" />
+          <EntitySet Name="BreedingProfits" EntityType="Self.BreedingProfits" />
+          <EntitySet Name="BreedingReminders" EntityType="Self.BreedingReminders" />
+          <EntitySet Name="BreedingType" EntityType="Self.BreedingType" />
+          <EntitySet Name="FishComings" EntityType="Self.FishComings" />
+          <EntitySet Name="FishProfits" EntityType="Self.FishProfits" />
+          <EntitySet Name="GrowingCharges" EntityType="Self.GrowingCharges" />
+          <EntitySet Name="GrowingCultures" EntityType="Self.GrowingCultures" />
+          <EntitySet Name="GrowingFieldComings" EntityType="Self.GrowingFieldComings" />
+          <EntitySet Name="GrowingFieldProfits" EntityType="Self.GrowingFieldProfits" />
+          <EntitySet Name="GrowingFruitComings" EntityType="Self.GrowingFruitComings" />
+          <EntitySet Name="GrowingFruitProfits" EntityType="Self.GrowingFruitProfits" />
+          <EntitySet Name="GrowingType" EntityType="Self.GrowingType" />
+          <EntitySet Name="HoneyType" EntityType="Self.HoneyType" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" />
+          <EntitySet Name="Profiles" EntityType="Self.Profiles" />
+          <EntitySet Name="Reminding" EntityType="Self.Reminding" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="YoungBreedings" EntityType="Self.YoungBreedings" />
+          <AssociationSet Name="FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserClaims" EntitySet="ApplicationUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserLogins" EntitySet="ApplicationUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId" Association="Self.FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="ApplicationUserRoles" EntitySet="ApplicationUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id" Association="Self.FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ApplicationUserRoles" EntitySet="ApplicationUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BeeComings" EntitySet="BeeComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeComings_dbo_Users_User_Id" Association="Self.FK_dbo_BeeComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BeeComings" EntitySet="BeeComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BeeHoneys" EntitySet="BeeHoneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BeeHoneys_dbo_Users_User_Id" Association="Self.FK_dbo_BeeHoneys_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BeeHoneys" EntitySet="BeeHoneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingCharges" EntitySet="BreedingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCharges_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingCharges_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingCharges" EntitySet="BreedingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingComings_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId" Association="Self.FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId">
+            <End Role="BreedingComings" EntitySet="BreedingComings" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingCultures" EntitySet="BreedingCultures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingDailyProfits" EntitySet="BreedingDailyProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingDailyProfits_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingDailyProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingDailyProfits" EntitySet="BreedingDailyProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingProfits_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingProfits" EntitySet="BreedingProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="BreedingReminders" EntitySet="BreedingReminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_BreedingReminders_dbo_Users_User_Id" Association="Self.FK_dbo_BreedingReminders_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BreedingReminders" EntitySet="BreedingReminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="FishComings" EntitySet="FishComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id" Association="Self.FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id">
+            <End Role="BreedingType" EntitySet="BreedingType" />
+            <End Role="YoungBreedings" EntitySet="YoungBreedings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishComings_dbo_Users_User_Id" Association="Self.FK_dbo_FishComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FishComings" EntitySet="FishComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_FishComings_FishId" Association="Self.FK_dbo_FishProfits_dbo_FishComings_FishId">
+            <End Role="FishComings" EntitySet="FishComings" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FishProfits_dbo_Users_User_Id" Association="Self.FK_dbo_FishProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FishProfits" EntitySet="FishProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingCharges" EntitySet="GrowingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCharges_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingCharges_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingCharges" EntitySet="GrowingCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingCultures" EntitySet="GrowingCultures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldComings_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFieldComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId" Association="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId">
+            <End Role="GrowingFieldComings" EntitySet="GrowingFieldComings" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFieldProfits_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFieldProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFieldProfits" EntitySet="GrowingFieldProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitComings_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFruitComings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId" Association="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId">
+            <End Role="GrowingFruitComings" EntitySet="GrowingFruitComings" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id" Association="Self.FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id">
+            <End Role="GrowingType" EntitySet="GrowingType" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GrowingFruitProfits_dbo_Users_User_Id" Association="Self.FK_dbo_GrowingFruitProfits_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GrowingFruitProfits" EntitySet="GrowingFruitProfits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Photo_dbo_Users_UserId" Association="Self.FK_dbo_Photo_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Photo" EntitySet="Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Profiles_dbo_Users_UserId" Association="Self.FK_dbo_Profiles_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Reminding_dbo_Users_User_Id" Association="Self.FK_dbo_Reminding_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reminding" EntitySet="Reminding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_YoungBreedings_dbo_Users_User_Id" Association="Self.FK_dbo_YoungBreedings_dbo_Users_User_Id">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="YoungBreedings" EntitySet="YoungBreedings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities1">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="Model.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationUserClaims">
+            <EntityTypeMapping TypeName="Model.ApplicationUserClaims">
+              <MappingFragment StoreEntitySet="ApplicationUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="FarmerUser_Id" ColumnName="FarmerUser_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationUserLogins">
+            <EntityTypeMapping TypeName="Model.ApplicationUserLogins">
+              <MappingFragment StoreEntitySet="ApplicationUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="FarmerUser_Id" ColumnName="FarmerUser_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationUserRoles">
+            <EntityTypeMapping TypeName="Model.ApplicationUserRoles">
+              <MappingFragment StoreEntitySet="ApplicationUserRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="FarmerUser_Id" ColumnName="FarmerUser_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeeComings">
+            <EntityTypeMapping TypeName="Model.BeeComings">
+              <MappingFragment StoreEntitySet="BeeComings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeeHoneys">
+            <EntityTypeMapping TypeName="Model.BeeHoneys">
+              <MappingFragment StoreEntitySet="BeeHoneys">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="HoneyType" ColumnName="HoneyType" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingCharges">
+            <EntityTypeMapping TypeName="Model.BreedingCharges">
+              <MappingFragment StoreEntitySet="BreedingCharges">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="SumCost" ColumnName="SumCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingComings">
+            <EntityTypeMapping TypeName="Model.BreedingComings">
+              <MappingFragment StoreEntitySet="BreedingComings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Mass" ColumnName="Mass" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingCultures">
+            <EntityTypeMapping TypeName="Model.BreedingCultures">
+              <MappingFragment StoreEntitySet="BreedingCultures">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingDailyProfits">
+            <EntityTypeMapping TypeName="Model.BreedingDailyProfits">
+              <MappingFragment StoreEntitySet="BreedingDailyProfits">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="СlearCost" ColumnName="СlearCost" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingProfits">
+            <EntityTypeMapping TypeName="Model.BreedingProfits">
+              <MappingFragment StoreEntitySet="BreedingProfits">
+                <ScalarProperty Name="BreedingId" ColumnName="BreedingId" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="Motive" ColumnName="Motive" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingReminders">
+            <EntityTypeMapping TypeName="Model.BreedingReminders">
+              <MappingFragment StoreEntitySet="BreedingReminders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="RemindDate" ColumnName="RemindDate" />
+                <ScalarProperty Name="RemindDays" ColumnName="RemindDays" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreedingType">
+            <EntityTypeMapping TypeName="Model.BreedingType">
+              <MappingFragment StoreEntitySet="BreedingType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FishComings">
+            <EntityTypeMapping TypeName="Model.FishComings">
+              <MappingFragment StoreEntitySet="FishComings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FishProfits">
+            <EntityTypeMapping TypeName="Model.FishProfits">
+              <MappingFragment StoreEntitySet="FishProfits">
+                <ScalarProperty Name="FishId" ColumnName="FishId" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="Motive" ColumnName="Motive" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingCharges">
+            <EntityTypeMapping TypeName="Model.GrowingCharges">
+              <MappingFragment StoreEntitySet="GrowingCharges">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+                <ScalarProperty Name="PlantName" ColumnName="PlantName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="SumCost" ColumnName="SumCost" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingCultures">
+            <EntityTypeMapping TypeName="Model.GrowingCultures">
+              <MappingFragment StoreEntitySet="GrowingCultures">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingFieldComings">
+            <EntityTypeMapping TypeName="Model.GrowingFieldComings">
+              <MappingFragment StoreEntitySet="GrowingFieldComings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LandingDate" ColumnName="LandingDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingFieldProfits">
+            <EntityTypeMapping TypeName="Model.GrowingFieldProfits">
+              <MappingFragment StoreEntitySet="GrowingFieldProfits">
+                <ScalarProperty Name="GrowingFieldId" ColumnName="GrowingFieldId" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="Remind" ColumnName="Remind" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ClearCost" ColumnName="ClearCost" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingFruitComings">
+            <EntityTypeMapping TypeName="Model.GrowingFruitComings">
+              <MappingFragment StoreEntitySet="GrowingFruitComings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LandingDate" ColumnName="LandingDate" />
+                <ScalarProperty Name="FloweringDate" ColumnName="FloweringDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="WasastPlants" ColumnName="WasastPlants" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingFruitProfits">
+            <EntityTypeMapping TypeName="Model.GrowingFruitProfits">
+              <MappingFragment StoreEntitySet="GrowingFruitProfits">
+                <ScalarProperty Name="GrowingFruitId" ColumnName="GrowingFruitId" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="Remind" ColumnName="Remind" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ClearCost" ColumnName="ClearCost" />
+                <ScalarProperty Name="ProfitCost" ColumnName="ProfitCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="GrowingType_Id" ColumnName="GrowingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowingType">
+            <EntityTypeMapping TypeName="Model.GrowingType">
+              <MappingFragment StoreEntitySet="GrowingType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoneyType">
+            <EntityTypeMapping TypeName="Model.HoneyType">
+              <MappingFragment StoreEntitySet="HoneyType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photo">
+            <EntityTypeMapping TypeName="Model.Photo">
+              <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Growing" ColumnName="Growing" />
+                <ScalarProperty Name="Breeding" ColumnName="Breeding" />
+                <ScalarProperty Name="Technique" ColumnName="Technique" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="Model.Profiles">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reminding">
+            <EntityTypeMapping TypeName="Model.Reminding">
+              <MappingFragment StoreEntitySet="Reminding">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Remind" ColumnName="Remind" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YoungBreedings">
+            <EntityTypeMapping TypeName="Model.YoungBreedings">
+              <MappingFragment StoreEntitySet="YoungBreedings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="CultureType" ColumnName="CultureType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MassType" ColumnName="MassType" />
+                <ScalarProperty Name="Mass" ColumnName="Mass" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="BreedingType_Id" ColumnName="BreedingType_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="c3dbc21f39374706a9dbc12893e4e242" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.875" PointX="21.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ApplicationUserClaims" Width="1.875" PointX="21.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ApplicationUserLogins" Width="2" PointX="5.625" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ApplicationUserRoles" Width="1.875" PointX="16.25" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BeeComings" Width="1.5" PointX="9.625" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BeeHoneys" Width="1.5" PointX="3.125" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingCharges" Width="1.5" PointX="3.5" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingComings" Width="1.875" PointX="6.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingCultures" Width="1.875" PointX="9.625" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingDailyProfits" Width="1.875" PointX="15.375" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingProfits" Width="1.5" PointX="13" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingReminders" Width="1.875" PointX="12.125" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BreedingType" Width="2.125" PointX="6.375" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FishComings" Width="1.5" PointX="9.875" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FishProfits" Width="1.5" PointX="18.625" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingCharges" Width="1.875" PointX="21.875" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingCultures" Width="1.75" PointX="12.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingFieldComings" Width="1.875" PointX="15.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingFieldProfits" Width="1.875" PointX="19" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingFruitComings" Width="2" PointX="22.75" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingFruitProfits" Width="1.875" PointX="25.375" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GrowingType" Width="2.125" PointX="15" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HoneyType" Width="1.5" PointX="25.375" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Photo" Width="1.5" PointX="6.375" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Profiles" Width="1.5" PointX="10.125" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reminding" Width="1.5" PointX="13.125" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Roles" Width="1.875" PointX="25.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users" Width="2.25" PointX="3" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.YoungBreedings" Width="1.5" PointX="18.5" PointY="22.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_ApplicationUserClaims_dbo_Users_FarmerUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_ApplicationUserLogins_dbo_Users_FarmerUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_ApplicationUserRoles_dbo_Roles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_ApplicationUserRoles_dbo_Users_FarmerUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BeeComings_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BeeComings_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BeeHoneys_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BeeHoneys_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingCharges_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingCharges_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingComings_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingComings_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingProfits_dbo_BreedingComings_BreedingId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingCultures_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingDailyProfits_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingDailyProfits_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingProfits_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingProfits_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingReminders_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_BreedingReminders_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FishComings_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FishProfits_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_YoungBreedings_dbo_BreedingType_BreedingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FishComings_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FishProfits_dbo_FishComings_FishId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FishProfits_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingCharges_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingCharges_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingCultures_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFieldComings_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFieldComings_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFieldProfits_dbo_GrowingFieldComings_GrowingFieldId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFieldProfits_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFieldProfits_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFruitComings_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFruitComings_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFruitProfits_dbo_GrowingFruitComings_GrowingFruitId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFruitProfits_dbo_GrowingType_GrowingType_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_GrowingFruitProfits_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Photo_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Profiles_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Reminding_dbo_Users_User_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_YoungBreedings_dbo_Users_User_Id" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

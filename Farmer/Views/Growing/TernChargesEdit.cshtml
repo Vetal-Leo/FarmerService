@@ -1,0 +1,130 @@
+﻿@Scripts.Render("~/bundles/jquery");
+@model Domain.Entities.Growing.GrowingCharges
+@{
+    ViewBag.Title = "Плодовые кустарники (Л-Ш) - Редактирование затрат";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Растениеводство.</h4>
+<h3 class="academy-fruit">Плодовые кустарники (Л-Ш). Затраты.</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal  col-md-offset-3">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ApplicationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <div class="input-group date" id="datetimepicker">
+                    @if (Model.ApplicationDate != null)
+                    {
+                        @Html.TextBoxFor(model => model.ApplicationDate, new { @class = "form-control", @Value = Model.ApplicationDate.Value.ToString("dd.MM.yyyy") })
+                        @Html.ValidationMessageFor(model => model.ApplicationDate, "", new { @class = "text-danger" })
+                    }
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PlantName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <select id="sltGrowings" name="sltGrowings" class="form-control"></select>
+                @Html.ValidationMessageFor(model => model.PlantName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Document, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <label id="file-success" class="text-success"></label>
+                @Html.EditorFor(model => model.Document, new { htmlAttributes = new { id = "document", type = "file", accept = "application/pdf" } })
+                <p id="sendpdf" class="btn btn-success btn-xs inputfile">Загрузить на сервер</p>
+                @Html.ValidationMessageFor(model => model.Document, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalCost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.TotalCost, new { htmlAttributes = new { @class = "form-control" }})
+                @Html.ValidationMessageFor(model => model.TotalCost, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.PlantName, new { id = "currentname" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Назад в Плодовые кустарники (Л-Ш). Затраты.", "TernCharges")
+</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        var planCodes = $('#sltGrowings');
+        $.ajax({
+            url: '/api/GrowingApi/GetTernNames',
+            type: "Get",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var option = $("<option/>");
+                    option.attr("value", data[i]).text(data[i]);
+                    var current = $('#currentname').val();
+                    if (data[i] === current) option.attr("selected", "selected");
+                    planCodes.append(option);
+                }
+            }
+        });
+   
+        //Download Pdf-files to the server.
+        $("#sendpdf").click(function () {
+            var files = document.getElementById("document").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    var data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+                    }
+                    $.ajax({
+                        method: "POST",
+                        url: "/api/User/AddNewPdf",
+                        contentType: false,
+                        processData: false,
+                        data: data,
+                        success: function () {
+                            $("#file-success").text("• Файл успешно загружен на сервер");
+                        },
+                        error: function () {
+                            alert("Файл не загружен!");
+                        }
+                    });
+                }
+            }
+        });
+
+        //Install the widget for the locale using the language parameter and the values of RU
+        $('#datetimepicker').datetimepicker(
+            { pickTime: false, language: 'ru' }
+        );
+    });
+</script>
+

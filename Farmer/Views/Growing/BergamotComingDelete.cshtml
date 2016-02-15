@@ -1,0 +1,21 @@
+﻿@model Domain.Entities.Growing.GrowingFruitComings
+
+@{
+    ViewBag.Title = "Плодовые деревья (А-И) - Удаление";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Растениеводство.</h4>
+<h3 class="academy-fruit">Плодовые деревья (А-И). Приход.</h3>
+<h3>Вы уверены, что хотите это удалить  &nbsp; @Model.Name , @Model.Amount @Model.MassType ?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+        <br />
+        @Html.ActionLink("Назад в Плодовые деревья (А-И)", "BergamotComing")
+    }
+
+</div>

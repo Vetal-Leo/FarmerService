@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Context.DatabaseContext" Collapsed="true">
+    <Position X="61" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAhAAjAgAAAAAiAAAAAACBAAGgAAAEASAAADCECBBEA=</HashCode>
+      <FileName>Context\DatabaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.BaseEntity" Collapsed="true">
+    <Position X="30.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.BaseUsersEntity" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\BaseUsersEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BeeComings" Collapsed="true">
+    <Position X="30.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAACAAAACAABAAAAABSAAAQAAAACQAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\BeeComings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BeeHoney" Collapsed="true">
+    <Position X="37" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBBAAACAAAAAAAAAAAAAJCAAAAAABADAAAAAgEAAAA=</HashCode>
+      <FileName>Entities\Breeding\BeeHoney.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingCharges" Collapsed="true">
+    <Position X="43.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAACAAAAAAABAAAAAAYAAAAAAAACEAAAAgAAAAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingCharges.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingComings" Collapsed="true">
+    <Position X="50.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAACAAAACAABAAAAABSAAAQAABACQAAAQACAAAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingComings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingCultures" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingCultures.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingDailyProfit">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAACAAAAAAAAAAAAAJSAAAAAABADAAAAAgBAAAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingDailyProfit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingProfits" Collapsed="true">
+    <Position X="23.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABDAAACAAAACAAAACAAAJSAQAAIABACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingProfits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingReminder">
+    <Position X="32.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBBAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAQAA=</HashCode>
+      <FileName>Entities\Breeding\BreedingReminder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.BreedingType" Collapsed="true">
+    <Position X="39.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAhAAAAAAAAAAgAAAAAACAQAAAAAAAACAAABCAABBEA=</HashCode>
+      <FileName>Entities\Breeding\BreedingType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.FishComings" Collapsed="true">
+    <Position X="46" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAACAAAACAABAAAAABSAAAQAABACQAAAIAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\FishComings .cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.FishProfits" Collapsed="true">
+    <Position X="52.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABDAAACAAAACEAAACAAAJSAQAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\FishProfits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.HoneyType" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Breeding\HoneyType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Breeding.YoungBreeding" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAACAAAACAABAAAAABSAAAQAABACQAAAAACAAAA=</HashCode>
+      <FileName>Entities\Breeding\YoungBreeding.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingCharges" Collapsed="true">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAAAAABAAAAAAYACAAAAAACEAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingCharges.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingCultures" Collapsed="true">
+    <Position X="34.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingCultures.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingFieldComings" Collapsed="true">
+    <Position X="41.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAACAAhAAAAABSACABAABASQAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingFieldComings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingFieldProfits" Collapsed="true">
+    <Position X="48.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAACgAAAAAAAJSASRAAABASAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingFieldProfits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingFruitComings" Collapsed="true">
+    <Position X="55" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAEACBABAAAAABSACABAABASQAAgAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingFruitComings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingFruitProfits" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEADAAAAAAAACAAAAAAAAJSASRAAABASAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingFruitProfits.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Growing.GrowingType" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAhAgAAAAAAAAAAAAAAQAAAAAAAAQAAACAAAAAAA=</HashCode>
+      <FileName>Entities\Growing\GrowingType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Identity.ApplicationRole" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\IdentityRole.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.Identity.ApplicationUserClaim" Collapsed="true">
+    <Position X="57.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\IdentityUserClaim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Identity.ApplicationUserLogin" Collapsed="true">
+    <Position X="59.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\IdentityUserLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Identity.ApplicationUserRole" Collapsed="true">
+    <Position X="61" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Identity\IdentityUserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.User.FarmerUser">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAiAAgAACCAAAiAAAAAASAAAABAAAAACABQCAAAABAA=</HashCode>
+      <FileName>Entities\User\FarmerUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.User.Photo" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAABAAAAAAEAAAQCAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\Photo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.User.Profile" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADACAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\User\Profile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.User.Reminding">
+    <Position X="28" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\Reminding.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Domain.Entities.User.Role" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Filldatabase.FirstFill" Collapsed="true">
+    <Position X="57.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAIAAAAAAAQAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Filldatabase\Breedingfill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Migrations.CreatingIdentityMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="59.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201508030032545_CreatingIdentityMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Domain.Migrations.Configuration" Collapsed="true">
+    <Position X="57.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Migrations\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Domain.Interfaces.IEntity&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Domain.Interfaces.IEntity" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,27 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@if (Request.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-right login">
+        <li> @Html.ActionLink(User.Identity.Name, "Index", "Home", null, new { @class = "logincolor" }) </li>
+        <li><a class="logincolor" id="exit">Выйти</a></li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right login">
+        <li>@Html.ActionLink("Регистрация", "Register", "AccountSimple", null, new { id = "registerLink", @class = "logincolor" })</li>
+        <li>@Html.ActionLink("Войти", "Login", "AccountSimple", null, new { id = "loginLink", @class = "logincolor" })</li>
+    </ul>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#exit').click(function (e) {
+            e.preventDefault();
+            sessionStorage.removeItem("tokenInfo");
+            $.ajax({ method: "POST", url: "/api/Account/Logout" }).success
+            (function () { window.location = "/Home/Index" });
+        });
+    });
+
+</script>

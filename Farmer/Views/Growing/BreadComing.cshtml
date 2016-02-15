@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Domain.Entities.Growing.GrowingFieldComings>
+@{
+    ViewBag.Title = "Хлебные культуры - Приход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Растениеводство.</h4>
+<h1 class="academy-field">Хлебные культуры</h1>
+<br />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><p class="shift">Приход &#10132; <a href="/Growing/BreadCharges">Затраты</a> &#10132; <a href="/Growing/BreadProfits">Уход</a></p> </div>
+    <div class="col-md-4">
+        <div class="btn-group advice">
+            <button class="btn  btn-advice dropdown-toggle  btn-success btn-xs"  data-toggle="dropdown">Рекомендации по уходу за культурой <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a class="href-color" href="/Growing/BreadComingCreate">Амарант</a></li>
+                <li><a class="href-color" href="#">Гречиха</a></li>
+                <li><a class="href-color" href="#">Дагусса</a></li>
+                <li class="divider"></li>
+                <li><a class="href-color" href="#">Кукуруза</a></li>
+            </ul>
+        </div>
+    </div> 
+</div>
+<br />
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="georgia-handlers">
+                <th>
+                    @Html.DisplayNameFor(model => model.LandingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CultureType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MassType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrencyType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalCost)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LandingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CultureType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MassType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CurrencyType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Смотреть", null, new { id = item.Id }, new { @class = "btn btn-success btn-xs", href = item.Document, target = "_blank", title = "Предварительно загрузите PDF - файл!" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalCost)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "BreadComingEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "BreadComingDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+    <a class="btn btn-primary btn-xs inlet" href="/Growing/BreadComingCreate">Добавить</a>
+</div>
+<script type="text/javascript">
+    
+
+</script>
+

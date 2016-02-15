@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Domain.Entities.Breeding.BreedingReminder>
+
+@{
+    ViewBag.Title = "Скотоводство(Мясо-молочные породы) - Напоминания";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h1 class="academy-bee">Скотоводство(Мясо-молочные породы). Напоминания.</h1>
+<br />
+<p class="shift">
+    <a href="/Breeding/CattlemixedYoung">Молодняк</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="/Breeding/CattlemixedComing">Приход</a> &#10132; <a href="/Breeding/CattlemixedCharges">Затраты</a> &nbsp;
+    <a href="/Breeding/CattlemixedDailyProfits">Ежедневная прибыль</a> &#10132; <a href="/Breeding/CattlemixedProfits">Уход</a> &nbsp; &nbsp; &nbsp; &nbsp; Напоминания
+</p>
+<br />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="georgia-handlers">
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RemindDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RemindDays)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="tr">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RemindDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RemindDays)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "CattlemixedRemindingEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "CattlemixedRemindingDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
+        <tbody>
+    </table>
+    <a class="btn btn-primary btn-xs inlet" href="/Breeding/CattlemixedRemindingCreate">Добавить</a>
+</div>
+
+

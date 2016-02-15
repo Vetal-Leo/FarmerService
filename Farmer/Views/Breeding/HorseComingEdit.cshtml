@@ -1,0 +1,155 @@
+﻿@model Domain.Entities.Breeding.BreedingComings
+
+@{
+    ViewBag.Title = "Коневодство(Лошади) - Редактирование животных.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-camel">Коневодство(Лошади). Приход.</h3>
+@Scripts.Render("~/bundles/jquery");
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-md-offset-3">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReceiptDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <div class="input-group date" id="datetimepicker">
+                    @if (Model.ReceiptDate != null)
+                    {
+                        @Html.TextBoxFor(model => model.ReceiptDate, new { @class = "form-control", @Value = Model.ReceiptDate.Value.ToString("dd.MM.yyyy") })
+                        @Html.ValidationMessageFor(model => model.ReceiptDate, "", new { @class = "text-danger" })
+                    }
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CultureType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(model => model.CultureType, new SelectList(Model.BreedingCultureses.Select(n => n.Name)),
+                "Австралийская пастушья", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CultureType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MassType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(model => model.MassType, new SelectList(new[]
+                {
+                    "грамм", "кг", "центнер"
+                }), "Ед.массы",
+                new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MassType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mass, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Mass, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mass, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrencyType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(model => model.CurrencyType, new SelectList(new[]
+                {
+                    "гр", "руб", "$", "€",
+                }), "Валюта",
+                new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CurrencyType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Document, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <label id="file-success" class="text-success"></label>
+                @Html.EditorFor(model => model.Document, new { htmlAttributes = new { id = "document", type = "file", accept = "application/pdf" } })
+                <p id="sendpdf" class="btn btn-success btn-xs inputfile">Загрузить на сервер</p>
+                @Html.ValidationMessageFor(model => model.Document, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Назад в Коневодство(Лошади).", "HorseComing")
+</div>
+
+
+
+<script type="text/javascript">
+    $(function() {
+        //Install the widget for the locale using the language parameter and the values of RU
+        $('#datetimepicker').datetimepicker(
+            { pickTime: false, language: 'ru' }
+        );
+
+        //Download Pdf-files to the server.
+        $("#sendpdf").click(function () {
+            var files = document.getElementById("document").files;
+            if (files.length > 0) {
+                if (window.FormData !== undefined) {
+                    var data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+                    }
+                    $.ajax({
+                        method: "POST",
+                        url: "/api/User/AddNewPdf",
+                        contentType: false,
+                        processData: false,
+                        data: data,
+                        success: function () {
+                            $("#file-success").text("• Файл успешно загружен на сервер");
+                        },
+                        error: function () {
+                            alert("Файл не загружен!");
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>
+

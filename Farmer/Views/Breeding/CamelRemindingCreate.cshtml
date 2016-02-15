@@ -1,0 +1,92 @@
+﻿@Scripts.Render("~/bundles/jquery");
+@model Domain.Entities.Breeding.BreedingReminder
+@{
+    ViewBag.Title = "Верблюдоводство - Добавление напоминаний.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4 class="georgia-handler">Сервис Животноводство.</h4>
+<h3 class="academy-camel">Верблюдоводство. Напоминания.</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <select id="sltBreedings" name="sltBreedings" class="form-control" tabindex="0"></select>
+                @Html.ValidationMessageFor(model => model.AnimalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RemindDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                <div class="input-group date" id="datetimepicker">
+                    @Html.EditorFor(model => model.RemindDate, new { htmlAttributes = new { @class = "form-control", id = "landingdate" } })
+                    @Html.ValidationMessageFor(model => model.RemindDate, "", new { @class = "text-danger" })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RemindDays, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.RemindDays, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.RemindDays, "", new {@class = "text-danger"})
+                @Html.HiddenFor(model => model.AnimalName, new {id = "currentname"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Назад в Верблюдоводство. Напоминания.", "CamelRemindings")
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        var planCodes = $('#sltBreedings');
+        $.ajax({
+            url: '/api/BreedingApi/GetCamelNames',
+            type: "Get",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var option = $("<option/>");
+                    option.attr("value", data[i]).text(data[i]);
+                    var current = $('#currentname').val();
+                    if (data[i] === current) option.attr("selected", "selected");
+                    planCodes.append(option);
+                }
+            }
+        });
+
+
+        //Install the widget for the locale using the language parameter and the values of RU
+        $('#datetimepicker').datetimepicker(
+            { pickTime: false, language: 'ru' }
+        );
+    });
+</script>
