@@ -1,28 +1,21 @@
 # FarmerService
 
-Сервис  “Фермер” - удобный, комфортный сервис, способный обеспечить основные потребности труженика сельского хозяйства,
-не зависимо от того какая форма хозяйствования применена коллективная или частная,
-сервис разрабатывался как универсальный инструмент труженика.
+Service "Farmer" is a convenient, comfortable service, able to provide the basic needs of agricultural workers, no matter what form of management applied to the collective or private, service was designed as a universal tool worker.
 
- Задачи сервиса:	
-○	Упорядочить хранение информации по объектам труда труженика с/х. 
+Service Objectives:
+○ Arrange the storage of information on the labor of the worker.
 
-○	Сервис представляет собой настольный органайзер труженика, помогающий ему в удобной форме удобный доступ
-к любой информации  и данным, которые использует труженик.
+○ Service is a desktop organizer worker to help him in the convenient form of easy access to any information and data which are used by the worker.
 
-○	Дать возможность легко управлять данными,  редактировать, добавлять и изменять данные 
-в зависимости от появившейся задачи труженика.
+○ Enable to easily manage data, edit, add, and modify the data, depending on which appeared the worker tasks.
 
-○	Сохранить и просмотреть нужную информацию его жизнедеятельности.
+○ Save and view the desired information of its life.
 
-○	Сервис вместе с тем контролирует работу труженика и при совершении определенных ошибок предлагает 
-труженику правильное решение.
+○ Service at the same time controls the worker and the work of the commission of certain errors offers working people the right decision.
 
-○	Кроме данных сервис дает возможность сохранять и просматривать загруженные документы  и  фото.
+○ In addition to the data service provides the ability to store and view the downloaded documents and photos.
 
-○	В сервисе так же встроена целая система напоминаний  для  разных отделов,
-что способствует хорошей организации труда. 
-
+○ The service also built a whole system of reminders for different departments, which contributes to the good organization of work.
 
 
 
