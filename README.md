@@ -2,8 +2,7 @@
 
 Service "Farmer" is a convenient, comfortable service, able to provide the basic needs of agricultural workers, no matter what form of management applied to the collective or private, service was designed as a universal tool worker.
 
-Service Objectives:
-
+####Service Objectives:
 ○ Arrange the storage of information on the labor of the worker.
 
 ○ Service is a desktop organizer worker to help him in the convenient form of easy access to any information and data which are used by the worker.
